@@ -1,0 +1,92 @@
+export default (books = [
+  {
+    id: 1,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Nihon-ni-ikiru-Islam-Cover.png',
+    pdf: 'https://saudiculture.jp/ebooks/Nihon-ni-ikiru-Islam.pdf',
+    size: { width: 250, height: 312 },
+  },
+  {
+    id: 2,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Saudi-Arabia-to-Nihon-Cover.png',
+    pdf: 'https://saudiculture.jp/ebooks/Saudi-Arabia-to-Nihon.pdf',
+    size: { width: 250, height: 256 },
+  },
+  {
+    id: 3,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/COE-Cover.png',
+    pdf: 'https://saudiculture.jp/ebooks/COE.pdf',
+    size: { width: 250, height: 345 },
+  },
+  {
+    id: 4,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Saudi-Uni-Cover.png',
+    pdf: 'https://saudiculture.jp/ebooks/Saudi_University.pdf',
+    size: { width: 250, height: 342 },
+  },
+  {
+    id: 5,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Women-Education-Cover.png',
+    pdf: 'https://saudiculture.jp/ebooks/Women-Education.pdf',
+    size: { width: 250, height: 349 },
+  },
+  {
+    id: 6,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Human-Development.jpeg',
+    pdf: 'https://saudiculture.jp/ebooks/Human-Development.pdf',
+    size: { width: 250, height: 400 },
+  },
+  {
+    id: 7,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/A-Kings_Journey.jpeg',
+    pdf: "https://saudiculture.jp/ebooks/A%20King's_Journey.pdf",
+    size: { width: 250, height: 348 },
+  },
+  {
+    id: 8,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/In-Words-and-Pictures.jpeg',
+    pdf: 'https://saudiculture.jp/ebooks/In%20Words%20and%20Pictures.pdf',
+    size: { width: 250, height: 325 },
+  },
+  {
+    id: 9,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/The-Compassionate-King.jpeg',
+    pdf: 'https://saudiculture.jp/ebooks/The%20Compassionate%20King.pdf',
+    size: { width: 250, height: 251 },
+  },
+  {
+    id: 10,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/20130305-01.jpg',
+    pdf: 'https://saudiculture.jp/ebooks/saudi-wa-tomodachi',
+    size: { width: 250, height: 354 },
+  },
+  {
+    id: 11,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Arabu-no-Samurai.jpeg',
+    pdf: 'https://saudiculture.jp/wp-content/uploads/2013/03/Arabu-no-Samurai.jpeg',
+    size: { width: 250, height: 355 },
+  },
+  {
+    id: 12,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Assalamualaikum.jpeg',
+    pdf: 'https://saudiculture.jp/ebooks/Assalamualaikum.pdf',
+    size: { width: 250, height: 354 },
+  },
+  {
+    id: 13,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Kishi-to-Uma.jpeg',
+    pdf: 'https://saudiculture.jp/ebooks/Kishi-to-Uma.pdf',
+    size: { width: 250, height: 349 },
+  },
+  {
+    id: 14,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Riyadh.jpeg',
+    pdf: 'https://saudiculture.jp/ebooks/Riyadh.pdf',
+    size: { width: 250, height: 344 },
+  },
+  {
+    id: 15,
+    cover: 'https://saudiculture.jp/wp-content/uploads/2013/03/Yume.jpeg',
+    pdf: 'https://saudiculture.jp/ebooks/Yume.pdf',
+    size: { width: 250, height: 353 },
+  },
+]);
