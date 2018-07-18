@@ -7,7 +7,7 @@ import books from './books';
 export default class BookDetail extends React.Component {
   static navigationOptions = {
     title: 'مطبوعات الملحقية',
-    right: <ActivityIndicator size="small"/>
+    right: <ActivityIndicator size="small" />,
   };
   render() {
     let url = this.props.navigation.getParam('url');

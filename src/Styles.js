@@ -15,6 +15,7 @@ let styles =
         arabicBold: {
           fontFamily: 'Droid Arabic Kufi',
           fontWeight: 'bold',
+          textAlign: 'right',
         },
       })
     : StyleSheet.create({
@@ -28,6 +29,7 @@ let styles =
         },
         arabicBold: {
           fontFamily: 'DroidKufi-Bold',
+          textAlign: 'right',
         },
       });
 export default styles;

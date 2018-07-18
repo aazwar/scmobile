@@ -52,7 +52,7 @@ export default class BookScreen extends React.Component {
         <Button block warning style={style.button} onPress={() => this.props.navigation.navigate('Books')}>
           <Text style={style.buttonText}>مطبوعات الملحقية</Text>
         </Button>
-        <Button block light style={style.button}>
+        <Button block light style={style.button} onPress={() => this.props.navigation.navigate('Contact')}>
           <Text style={style.buttonText}>التصل بنا</Text>
         </Button>
       </Container>
