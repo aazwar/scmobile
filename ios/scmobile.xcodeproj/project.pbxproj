@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -57,6 +56,7 @@
 		C2F11D5978594D52896D1FE9 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12599ED393FD474DB2523EF7 /* FontAwesome.ttf */; };
 		DF860C83D6B646CB9FD691DF /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950CF817C1FA4D1FAA846AD9 /* Foundation.ttf */; };
 		E616AE3276FD41B0AF691ABA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 528F32E0A4C14DA7A10E5ACE /* MaterialIcons.ttf */; };
+		00134B8DA6B94AEE83C5CD50 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18709A84EA8749C0B8A583E2 /* Feather.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -397,6 +397,7 @@
 		DAAF0E5D7FDD4CA2870C57E5 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		DE593E5FCE92496EB65623B2 /* SQLite.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../node_modules/react-native-sqlite-storage/src/ios/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		F22C7CE7421C41EC86CE9AAC /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		18709A84EA8749C0B8A583E2 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +536,7 @@
 				A9FDCC6AA818430DBEC65E2E /* Zocial.ttf */,
 				50E8BAF834764266A3E57B02 /* DroidKufi-Regular.ttf */,
 				62761724C7814E0E8CB65595 /* DroidKufi-Bold.ttf */,
+				18709A84EA8749C0B8A583E2 /* Feather.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1201,6 +1203,7 @@
 				4561E3B320F4A558002D44AF /* qamus.db in Resources */,
 				9171FC5A94994665B950C1E3 /* DroidKufi-Regular.ttf in Resources */,
 				3CB9D1E5042040B18B9DC87D /* DroidKufi-Bold.ttf in Resources */,
+				00134B8DA6B94AEE83C5CD50 /* Feather.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,8 +17,9 @@ import BookDetail from './src/books/detail';
 import Nihongo from './src/nihongo';
 import Qamus from './src/qamus';
 import Emergency from './src/emergency';
-import Tamim from './src/tamim';
-import News from './src/news';
+import Tamim from './src/feed/Tamim';
+import News from './src/feed/News';
+import ViewFeed from './src/feed/ViewFeed';
 
 export default createStackNavigator({
   Home,
@@ -30,4 +31,5 @@ export default createStackNavigator({
   Emergency,
   Tamim,
   News,
+  ViewFeed,
 });

@@ -10,7 +10,7 @@ export default class ContactScreen extends React.Component {
       <Container>
         <Content>
           <ListItem itemHeader>
-            <Text style={[Styles.arabicBold,{flex: 1}]}>التصل بنا</Text>
+            <Text style={[Styles.arabicBold, { flex: 1 }]}>التصل بنا</Text>
           </ListItem>
           <ListItem>
             <Text style={Styles.arabic}>{`إخوتي وأخواتي المبتعثين و المبتعثات
@@ -20,7 +20,7 @@ export default class ContactScreen extends React.Component {
 `}</Text>
           </ListItem>
           <ListItem itemHeader>
-            <Text style={[Styles.arabicBold,{flex: 1}]}> فريق التحرير</Text>
+            <Text style={[Styles.arabicBold, { flex: 1 }]}> فريق التحرير</Text>
           </ListItem>
           <ListItem>
             <Text style={Styles.arabic}>

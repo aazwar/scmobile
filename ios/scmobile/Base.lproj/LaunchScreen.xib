@@ -16,12 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الملحقية الثقافية السعودية في اليابان" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="UGs-cg-4eV">
                     <rect key="frame" x="120" y="120" width="240" height="240"/>
                     <constraints>
@@ -32,11 +26,8 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="UGs-cg-4eV" secondAttribute="trailing" constant="120" id="6Bb-Hk-afy"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstItem="UGs-cg-4eV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="120" id="ULb-b1-krZ"/>
                 <constraint firstItem="UGs-cg-4eV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VvA-gr-cMK"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
                 <constraint firstItem="UGs-cg-4eV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fy4-fr-BBw"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

@@ -37,10 +37,10 @@ export default class BookScreen extends React.Component {
     let { width, height } = Dimensions.get('window');
     return (
       <Container style={style.container}>
-        <Button block info style={style.button}>
+        <Button block info style={style.button} onPress={() => this.props.navigation.navigate('Tamim')}>
           <Text style={style.buttonText}>التعاميم المهمة</Text>
         </Button>
-        <Button block primary style={style.button}>
+        <Button block primary style={style.button} onPress={() => this.props.navigation.navigate('News')}>
           <Text style={style.buttonText}>اخبار الملحقية</Text>
         </Button>
         <Button block success style={style.button} onPress={() => this.props.navigation.navigate('Qamus')}>
