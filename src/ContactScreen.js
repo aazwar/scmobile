@@ -5,6 +5,9 @@ import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, Lis
 import Styles from './Styles';
 
 export default class ContactScreen extends React.Component {
+  static navigationOptions = {
+    title: 'مطبوعات الملحقية',
+  };
   render() {
     return (
       <Container>

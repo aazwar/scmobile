@@ -3,22 +3,24 @@ import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, F
 import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, ListItem } from 'native-base';
 
 import { fetchTaamim } from './fetcher.js';
+import styles from '../Styles';
 
 class Tamim extends React.PureComponent {
   render() {
     let { url, title, navigation } = this.props;
     return (
       <ListItem onPress={() => navigation.navigate('ViewFeed', { url, title })}>
-        <Text style={{ textAlign: 'right', flex: 1 }}>{title}</Text>
+        <Text style={{ ...styles.arabic, flex: 1 }}>{title}</Text>
       </ListItem>
     );
   }
 }
 
 export default class TamimScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = ({ navigation, navigationOptions }) => {
     return {
       title: 'التعاميم المهمة',
+      headerTitleStyle: navigationOptions.headerTitleStyle,
       headerRight: (
         <Button transparent onPress={navigation.getParam('refresh')}>
           <Icon name={Platform.OS == 'ios' ? 'ios-refresh' : 'md-refresh'} />

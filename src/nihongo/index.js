@@ -4,13 +4,14 @@ import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, Lis
 import _ from 'lodash';
 import Sound from 'react-native-sound';
 
-import TextStyle from '../Styles.js';
+import style from '../Styles.js';
 import db from '../Database';
 
 export default class NihongoScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = ({ navigation, navigationOptions }) => {
     return {
       title: navigation.getParam('title', 'قاموس الصوطي ميسر'),
+      headerTitleStyle: navigationOptions.headerTitleStyle,
     };
   };
 
@@ -69,11 +70,11 @@ export default class NihongoScreen extends React.Component {
                     : this.props.navigation.push('Nihongo', { catid: item.id, title: item.arabic })
                 }>
                 <Text style={{ flex: 1 }}>
-                  <Text style={[TextStyle.bodyText, { padding: 5 }]}>{item.name}</Text>
-                  <Text style={TextStyle.caption}>{`\n${item.reading}`}</Text>
+                  <Text style={{ ...style.bodyText, padding: 5 }}>{item.name}</Text>
+                  <Text style={style.caption}>{`\n${item.reading}`}</Text>
                 </Text>
                 <Text style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
-                  <Text style={[TextStyle.arabic, { padding: 5 }]}>{`${item.arabic}`}</Text>
+                  <Text style={{ ...style.arabic, padding: 5 }}>{`${item.arabic}`}</Text>
                 </Text>
               </ListItem>
             )}

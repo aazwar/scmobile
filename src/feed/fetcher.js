@@ -8,7 +8,7 @@ function decodeHtmlEntity(str) {
   });
 }
 
-export async function fetchTaamim(force=false) {
+export async function fetchTaamim(force = false) {
   let now = moment().format('YYYY-MM-DD');
   let taamimFetchDate = await AsyncStorage.getItem('taamimFetchDate');
   let taamims = await AsyncStorage.getItem('taamims').then(str => JSON.parse(str));
@@ -39,7 +39,7 @@ export async function fetchTaamim(force=false) {
   }
 }
 
-export async function fetchNews(force=false) {
+export async function fetchNews(force = false) {
   let now = moment().format('YYYY-MM-DD');
   let newsFetchDate = await AsyncStorage.getItem('newsFetchDate');
   let news = await AsyncStorage.getItem('news').then(str => JSON.parse(str));

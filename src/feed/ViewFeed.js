@@ -3,6 +3,7 @@ import { ScrollView, Dimensions } from 'react-native';
 import HTML from 'react-native-render-html';
 
 import { fetchContent } from './fetcher';
+import styles from '../Styles';
 
 export default class ViewFeed extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
@@ -32,9 +33,10 @@ export default class ViewFeed extends React.PureComponent {
         <HTML
           html={this.state.html}
           imagesMaxWidth={Dimensions.get('window').width}
-          tagsStyles={{ 
-            h2: { textAlign: 'right' }, 
-            p: { textAlign: 'right', marginTop: 14, marginBottom: 14 } 
+          baseFontStyle={styles.arabic}
+          tagsStyles={{
+            h2: { textAlign: 'right' },
+            p: { textAlign: 'right', marginTop: 14, marginBottom: 14 },
           }}
         />
       </ScrollView>

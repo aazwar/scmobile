@@ -1,6 +1,6 @@
 let SQLite = require('react-native-sqlite-storage');
 
-const dbname = 'qamus.db';
+const dbname = 'qamus1.db';
 
 export default SQLite.openDatabase(
   { name: dbname, readOnly: 'true', createFromLocation: 1 },

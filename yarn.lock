@@ -4439,9 +4439,9 @@ react-native-sound@^0.10.9:
   version "0.10.9"
   resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.10.9.tgz#6b00b0f4afd017cde09fbb9d171df1b5d5b851a8"
 
-react-native-sqlite-storage@^3.3.6:
+"react-native-sqlite-storage@git+https://git@github.com/aazwar/react-native-sqlite-storage.git":
   version "3.3.6"
-  resolved "https://registry.yarnpkg.com/react-native-sqlite-storage/-/react-native-sqlite-storage-3.3.6.tgz#c8ab7d2547fcd91332a7bf759c471749a9abd187"
+  resolved "git+https://git@github.com/aazwar/react-native-sqlite-storage.git#1df257afebcafb8d018db97f5cfcda6739ef888b"
   dependencies:
     xcode "0.8.9"
 

@@ -3,7 +3,7 @@ import { human, material, notoCJKWeights } from 'react-native-typography';
 
 let styles =
   Platform.OS === 'ios'
-    ? StyleSheet.create({
+    ? {
         bodyText: { ...human.bodyObject },
         caption: { ...human.caption2Object, fontStyle: 'italic' },
         japanese: { ...human.bodyObject, fontFamily: 'Hiragino Kaku Gothic ProN' },
@@ -17,8 +17,8 @@ let styles =
           fontWeight: 'bold',
           textAlign: 'right',
         },
-      })
-    : StyleSheet.create({
+      }
+    : {
         bodyText: { ...material.body1Object },
         caption: { ...material.captionObject, fontStyle: 'italic' },
         japanese: { ...material.body1Object, ...notoCJKWeights.regularObject },
@@ -31,5 +31,26 @@ let styles =
           fontFamily: 'DroidKufi-Bold',
           textAlign: 'right',
         },
-      });
+      };
+
+styles = {
+  ...styles,
+  buttonMenu: {
+    margin: 10,
+  },
+  buttonMenuText: {
+    ...styles.arabicBold,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 5,
+    fontSize: 16,
+  },
+  buttonMenuContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+};
+
 export default styles;

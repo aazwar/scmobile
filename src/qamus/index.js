@@ -1,26 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, FlatList } from 'react-native';
 import { Container, Content, Header, Item, Input, Body, Title, Button, Left, Right, Icon, ListItem } from 'native-base';
-import TextStyle from '../Styles.js';
+import style from '../Styles.js';
 
 import db from '../Database';
 
-const style = StyleSheet.create({
-  list: {
-    width: Dimensions.get('window').width - 36,
-  },
-  bold: {
-    fontWeight: 'bold',
-  },
-});
-
 export default class QamusScreen extends React.Component {
-  static navigationOptions =
-    Platform.OS === 'ios'
-      ? { header: null }
-      : {
-          title: 'قواميس مشرق في البحث',
-        };
+  static navigationOptions = {
+    title: 'قواميس مشرق البحث',
+  };
   state = {
     keyword: '',
     data: [],
@@ -49,12 +37,13 @@ export default class QamusScreen extends React.Component {
   render() {
     return (
       <Container>
-        <Header searchBar rounded>
-          <Button transparent>
-            <Icon name="ios-arrow-back" onPress={() => this.props.navigation.goBack()} />
-          </Button>
-          <Item>
-            <Icon name="ios-search" />
+        <ListItem icon>
+          <Left>
+            <Button transparent>
+              <Icon name={Platform.OS == 'ios' ? 'ios-menu' : 'md-menu'} />
+            </Button>
+          </Left>
+          <Body>
             <Input
               placeholder="الكلمة"
               onChangeText={keyword => this.setState({ keyword })}
@@ -64,8 +53,14 @@ export default class QamusScreen extends React.Component {
               onFocus={() => this.setState({ keyword: '' })}
               clearButtonMode="while-editing"
             />
-          </Item>
-        </Header>
+          </Body>
+          <Right>
+            <Button transparent onPress={this._search.bind(this)}>
+              <Icon name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'} />
+            </Button>
+          </Right>
+        </ListItem>
+
         <Content>
           <FlatList
             data={this.state.data}
@@ -73,17 +68,17 @@ export default class QamusScreen extends React.Component {
             renderItem={({ item }) => (
               <ListItem>
                 <Text style={{ flex: 1 }}>
-                  {item.english} <Text style={style.bold}>{item.field}</Text>
+                  {item.english} <Text style={{ fontWeight: 'bold' }}>{item.field}</Text>
                   {'\n'}
-                  <Text style={TextStyle.japanese}>
+                  <Text style={style.japanese}>
                     {item.japanese}
                     {'\n'}
                   </Text>
-                  <Text style={TextStyle.furigana}>
+                  <Text style={style.furigana}>
                     {item.furigana}
                     {'\n'}
                   </Text>
-                  <Text style={TextStyle.arabic}>{item.arabic}</Text>
+                  <Text style={style.arabic}>{item.arabic}</Text>
                 </Text>
               </ListItem>
             )}

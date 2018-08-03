@@ -5,7 +5,9 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		00134B8DA6B94AEE83C5CD50 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18709A84EA8749C0B8A583E2 /* Feather.ttf */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
@@ -38,7 +40,7 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		38880F224F704C068C1E5C25 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7187845C777348FE81946D16 /* Octicons.ttf */; };
 		3CB9D1E5042040B18B9DC87D /* DroidKufi-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62761724C7814E0E8CB65595 /* DroidKufi-Bold.ttf */; };
-		4561E3B320F4A558002D44AF /* qamus.db in Resources */ = {isa = PBXBuildFile; fileRef = 4561E38C20F4A558002D44AF /* qamus.db */; };
+		4561E3B320F4A558002D44AF /* qamus1.db in Resources */ = {isa = PBXBuildFile; fileRef = 4561E38C20F4A558002D44AF /* qamus1.db */; };
 		5704837219AB45AA8F92330E /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2260FD790D594FA2B961DC9D /* Roboto.ttf */; };
 		5CF1CF09B6EE4F12B9DD4F16 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 959AF391CBD347C8A1CF932A /* libsqlite3.0.tbd */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -56,7 +58,6 @@
 		C2F11D5978594D52896D1FE9 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12599ED393FD474DB2523EF7 /* FontAwesome.ttf */; };
 		DF860C83D6B646CB9FD691DF /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950CF817C1FA4D1FAA846AD9 /* Foundation.ttf */; };
 		E616AE3276FD41B0AF691ABA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 528F32E0A4C14DA7A10E5ACE /* MaterialIcons.ttf */; };
-		00134B8DA6B94AEE83C5CD50 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18709A84EA8749C0B8A583E2 /* Feather.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -371,13 +372,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = scmobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = scmobile/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		18709A84EA8749C0B8A583E2 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		2260FD790D594FA2B961DC9D /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		22685C13818E401E82C45E76 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* scmobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "scmobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* scmobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "scmobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4172F08ADA4B6FBFE7969D /* libSQLite.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSQLite.a; sourceTree = "<group>"; };
-		4561E38C20F4A558002D44AF /* qamus.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = qamus.db; path = scmobile/qamus.db; sourceTree = "<group>"; };
+		4561E38C20F4A558002D44AF /* qamus1.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = qamus1.db; path = scmobile/qamus1.db; sourceTree = "<group>"; };
 		50E8BAF834764266A3E57B02 /* DroidKufi-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidKufi-Regular.ttf"; path = "../src/assets/fonts/DroidKufi-Regular.ttf"; sourceTree = "<group>"; };
 		528F32E0A4C14DA7A10E5ACE /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -397,7 +399,6 @@
 		DAAF0E5D7FDD4CA2870C57E5 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		DE593E5FCE92496EB65623B2 /* SQLite.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../node_modules/react-native-sqlite-storage/src/ios/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		F22C7CE7421C41EC86CE9AAC /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		18709A84EA8749C0B8A583E2 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -520,7 +521,7 @@
 		083D707059344E57809F95CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4561E38C20F4A558002D44AF /* qamus.db */,
+				4561E38C20F4A558002D44AF /* qamus1.db */,
 				7553701D02494C2FB89E3E90 /* Entypo.ttf */,
 				63CA923E0BC54A658BD93487 /* EvilIcons.ttf */,
 				12599ED393FD474DB2523EF7 /* FontAwesome.ttf */,
@@ -1200,7 +1201,7 @@
 				8350D8F7953443778F3BDB00 /* rubicon-icon-font.ttf in Resources */,
 				870C4C52AAFD494FBD80FD2B /* SimpleLineIcons.ttf in Resources */,
 				0CD104645FFB45D1BBBBCBA3 /* Zocial.ttf in Resources */,
-				4561E3B320F4A558002D44AF /* qamus.db in Resources */,
+				4561E3B320F4A558002D44AF /* qamus1.db in Resources */,
 				9171FC5A94994665B950C1E3 /* DroidKufi-Regular.ttf in Resources */,
 				3CB9D1E5042040B18B9DC87D /* DroidKufi-Bold.ttf in Resources */,
 				00134B8DA6B94AEE83C5CD50 /* Feather.ttf in Resources */,
