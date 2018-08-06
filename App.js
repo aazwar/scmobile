@@ -17,10 +17,6 @@ import Books from './src/books';
 import BookDetail from './src/books/detail';
 import Nihongo from './src/nihongo';
 import Qamus from './src/qamus';
-import Emergency from './src/emergency';
-import Jishin from './src/emergency/jishin';
-import Taifu from './src/emergency/taifu';
-import Profile from './src/emergency/profile';
 import Tamim from './src/feed/Tamim';
 import News from './src/feed/News';
 import ViewFeed from './src/feed/ViewFeed';
@@ -33,10 +29,6 @@ export default createStackNavigator(
     Qamus,
     Nihongo,
     BookDetail,
-    Emergency,
-    Jishin,
-    Taifu,
-    Profile,
     Tamim,
     News,
     ViewFeed,

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00134B8DA6B94AEE83C5CD50 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18709A84EA8749C0B8A583E2 /* Feather.ttf */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
@@ -58,6 +57,10 @@
 		C2F11D5978594D52896D1FE9 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12599ED393FD474DB2523EF7 /* FontAwesome.ttf */; };
 		DF860C83D6B646CB9FD691DF /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950CF817C1FA4D1FAA846AD9 /* Foundation.ttf */; };
 		E616AE3276FD41B0AF691ABA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 528F32E0A4C14DA7A10E5ACE /* MaterialIcons.ttf */; };
+		7D1A529A22404024AD9387EE /* libRCTPdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1304BD814E4AD6BC0E9928 /* libRCTPdf.a */; };
+		9B3347006F9D46CBB383DF0C /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E541FFFBB441E3AA865E26 /* libRNFetchBlob.a */; };
+		DEBF8D9339AE42D5B08C9141 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BC2800DA123412E97CD24C8 /* bg.jpg */; };
+		9D14E1638EFB47E98CD0C7C4 /* header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 833B82186A8749D1A6FD9B10 /* header.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -399,6 +402,12 @@
 		DAAF0E5D7FDD4CA2870C57E5 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		DE593E5FCE92496EB65623B2 /* SQLite.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../node_modules/react-native-sqlite-storage/src/ios/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		F22C7CE7421C41EC86CE9AAC /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		0DC6A010D5964B5D80409771 /* RCTPdf.xcodeproj */ = {isa = PBXFileReference; name = "RCTPdf.xcodeproj"; path = "../node_modules/react-native-pdf/ios/RCTPdf.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		2E1304BD814E4AD6BC0E9928 /* libRCTPdf.a */ = {isa = PBXFileReference; name = "libRCTPdf.a"; path = "libRCTPdf.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		87BE99DD27AE47BEA818005D /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/rn-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		83E541FFFBB441E3AA865E26 /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		1BC2800DA123412E97CD24C8 /* bg.jpg */ = {isa = PBXFileReference; name = "bg.jpg"; path = "../src/assets/bg.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		833B82186A8749D1A6FD9B10 /* header.jpg */ = {isa = PBXFileReference; name = "header.jpg"; path = "../src/assets/header.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +439,8 @@
 				6FCC9FD01EC9464E8F43C5ED /* libSQLite.a in Frameworks */,
 				5CF1CF09B6EE4F12B9DD4F16 /* libsqlite3.0.tbd in Frameworks */,
 				1C280FDA9C5046468E1A08F7 /* libRNSound.a in Frameworks */,
+				7D1A529A22404024AD9387EE /* libRCTPdf.a in Frameworks */,
+				9B3347006F9D46CBB383DF0C /* libRNFetchBlob.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +549,8 @@
 				50E8BAF834764266A3E57B02 /* DroidKufi-Regular.ttf */,
 				62761724C7814E0E8CB65595 /* DroidKufi-Bold.ttf */,
 				18709A84EA8749C0B8A583E2 /* Feather.ttf */,
+				1BC2800DA123412E97CD24C8 /* bg.jpg */,
+				833B82186A8749D1A6FD9B10 /* header.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -668,6 +681,8 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				DE593E5FCE92496EB65623B2 /* SQLite.xcodeproj */,
 				86C5A0E5560A421FB473ADDC /* RNSound.xcodeproj */,
+				0DC6A010D5964B5D80409771 /* RCTPdf.xcodeproj */,
+				87BE99DD27AE47BEA818005D /* RNFetchBlob.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1205,6 +1220,8 @@
 				9171FC5A94994665B950C1E3 /* DroidKufi-Regular.ttf in Resources */,
 				3CB9D1E5042040B18B9DC87D /* DroidKufi-Bold.ttf in Resources */,
 				00134B8DA6B94AEE83C5CD50 /* Feather.ttf in Resources */,
+				DEBF8D9339AE42D5B08C9141 /* bg.jpg in Resources */,
+				9D14E1638EFB47E98CD0C7C4 /* header.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1331,12 +1348,16 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = scmobileTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1358,12 +1379,16 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = scmobileTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1387,6 +1412,8 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = scmobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1410,6 +1437,8 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = scmobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1439,11 +1468,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = "scmobile-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1475,11 +1508,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = "scmobile-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1510,11 +1547,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = "scmobile-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1545,11 +1586,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-pdf/ios/RCTPdf/**",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 				INFOPLIST_FILE = "scmobile-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

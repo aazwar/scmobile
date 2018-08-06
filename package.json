@@ -13,8 +13,7 @@
   },
   "rnpm": {
     "assets": [
-      "./src/assets/fonts",
-      "./src/assets/db"
+      "./src/assets"
     ]
   },
   "packagerOpts": {
