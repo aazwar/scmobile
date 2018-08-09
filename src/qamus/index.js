@@ -4,10 +4,11 @@ import { Container, Content, Header, Item, Input, Body, Title, Button, Left, Rig
 import style from '../Styles.js';
 
 import db from '../Database';
+import Settings from '../Settings';
 
 export default class QamusScreen extends React.Component {
   static navigationOptions = {
-    title: 'قواميس مشرق البحث',
+    header: null,
   };
   state = {
     keyword: '',
@@ -34,16 +35,17 @@ export default class QamusScreen extends React.Component {
     });
   }
 
+  componentDidMount() {
+    let settings = new Settings();
+    settings.load().then(() => this.setState({ qamus: settings.qamus }));
+  }
+
   render() {
     return (
       <Container>
-        <ListItem icon>
-          <Left>
-            <Button transparent>
-              <Icon name={Platform.OS == 'ios' ? 'ios-menu' : 'md-menu'} />
-            </Button>
-          </Left>
-          <Body>
+        <Header searchBar rounded>
+          <Item>
+            <Icon name={Platform.OS == 'ios' ? 'ios-menu' : 'md-menu'} />
             <Input
               placeholder="الكلمة"
               onChangeText={keyword => this.setState({ keyword })}
@@ -53,13 +55,9 @@ export default class QamusScreen extends React.Component {
               onFocus={() => this.setState({ keyword: '' })}
               clearButtonMode="while-editing"
             />
-          </Body>
-          <Right>
-            <Button transparent onPress={this._search.bind(this)}>
-              <Icon name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'} />
-            </Button>
-          </Right>
-        </ListItem>
+            <Icon name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'} onPress={this._search.bind(this)}/>
+          </Item>
+        </Header>
 
         <Content>
           <FlatList
