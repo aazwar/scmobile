@@ -23,21 +23,28 @@ export default class ViewFeed extends React.PureComponent {
   <body><p>${record.date}<br></p>${record.content}
   </body>
 </html>`;
-    console.log(html);
     this.setState({ html });
   }
 
   render() {
+    let { lang } = this.props;
     return (
       <ScrollView style={{ flex: 1, margin: 10 }}>
         <HTML
           html={this.state.html}
           imagesMaxWidth={Dimensions.get('window').width}
-          baseFontStyle={styles.arabic}
-          tagsStyles={{
-            h2: { textAlign: 'right' },
-            p: { textAlign: 'right', marginTop: 14, marginBottom: 14 },
-          }}
+          baseFontStyle={lang === 'ar' ? styles.arabic : styles.japanese}
+          tagsStyles={
+            lang === 'ar'
+              ? {
+                  h2: { textAlign: 'right' },
+                  p: { marginTop: 14, marginBottom: 14 },
+                }
+              : {
+                  h2: { textAlign: 'left' },
+                  p: { marginTop: 14, marginBottom: 14 },
+                }
+          }
         />
       </ScrollView>
     );

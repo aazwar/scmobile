@@ -55,7 +55,7 @@ export default class QamusScreen extends React.Component {
               onFocus={() => this.setState({ keyword: '' })}
               clearButtonMode="while-editing"
             />
-            <Icon name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'} onPress={this._search.bind(this)}/>
+            <Icon name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'} onPress={this._search.bind(this)} />
           </Item>
         </Header>
 

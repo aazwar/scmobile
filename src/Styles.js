@@ -51,6 +51,35 @@ styles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    ...styles.arabicBold,
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 20,
+  },
+  header: {
+    ...styles.arabicBold,
+    flex: 1,
+    marginBottom: 10,
+    fontSize: 18,
+  },
+  jheader: {
+    ...styles.japanese,
+    flex: 1,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    fontSize: 18,
+  },
+  paragraph: {
+    ...styles.arabic,
+    flex: 1,
+    fontSize: 16,
+  },
+  jparagraph: {
+    ...styles.japanese,
+    flex: 1,
+    fontSize: 16,
+  },
 };
 
 export default styles;

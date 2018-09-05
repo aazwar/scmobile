@@ -18,7 +18,10 @@ import BookDetail from './src/books/detail';
 import Nihongo from './src/nihongo';
 import Qamus from './src/qamus';
 import Tamim from './src/feed/Tamim';
-import News from './src/feed/News';
+import NewsAr from './src/feed/NewsAr';
+import NewsJp from './src/feed/NewsJp';
+import Certification from './src/CertificationScreen';
+import Attache from './src/AttacheScreen';
 import ViewFeed from './src/feed/ViewFeed';
 
 export default createStackNavigator(
@@ -30,8 +33,11 @@ export default createStackNavigator(
     Nihongo,
     BookDetail,
     Tamim,
-    News,
+    NewsAr,
+    NewsJp,
     ViewFeed,
+    Certification,
+    Attache,
   },
   {
     navigationOptions: {

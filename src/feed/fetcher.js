@@ -39,19 +39,21 @@ export async function fetchTaamim(force = false) {
   }
 }
 
-export async function fetchNews(force = false) {
+export async function fetchNews(lang, force = false) {
+  let url = `https://saudiculture.jp/news/?lang=${lang}`;
   let now = moment().format('YYYY-MM-DD');
-  let newsFetchDate = await AsyncStorage.getItem('newsFetchDate');
-  let news = await AsyncStorage.getItem('news').then(str => JSON.parse(str));
+  await AsyncStorage.clear();
+  let newsFetchDate = await AsyncStorage.getItem(`newsFetchDate${lang}`);
+  let news = await AsyncStorage.getItem(`news-${lang}`).then(str => JSON.parse(str));
 
   // No need to fetch. use stored news
-  if (now == newsFetchDate && news != null && !force) {
+  if (now == newsFetchDate && news != null && news.length > 0 && !force) {
     return news;
   }
 
   try {
-    const response = await axios.get('https://saudiculture.jp/news/?lang=ar');
-    let regex = /href="(.*?\/news\/(\d+)\/\?lang=ar)">(.*?)</g;
+    const response = await axios.get(url);
+    let regex = new RegExp(`href="(.*?\\/news\\/(\\d+)\\/\\?lang=${lang})">(.*?)<`, 'g');
     let news = [];
     let matches;
     while ((matches = regex.exec(response.data))) {
@@ -61,8 +63,8 @@ export async function fetchNews(force = false) {
         url: matches[1],
       });
     }
-    AsyncStorage.setItem('news', JSON.stringify(news));
-    AsyncStorage.setItem('newsFetchDate', now);
+    AsyncStorage.setItem(`news-${lang}`, JSON.stringify(news));
+    AsyncStorage.setItem(`newsFetchDate${lang}`, now);
     return news;
   } catch (error) {
     console.error(error);
@@ -76,7 +78,7 @@ export async function fetchContent(url) {
   if (record != null) return record;
   try {
     const { data } = await axios.get(url);
-    let [, date] = data.match(/<div class="contentHeader">([\d\/]+)<\/div>/);
+    let [, date] = data.match(/<div class="contentHeader">([\d\/年月日]+)<\/div>/);
     let [content] = data.match(/<div class="boxContent">([^]*)<div style="clear: both">&nbsp;<\/div>/gm);
     let record = { date, content };
     AsyncStorage.setItem(`@${type}-${id}`, JSON.stringify(record));

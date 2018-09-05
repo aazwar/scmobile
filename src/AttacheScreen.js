@@ -111,47 +111,23 @@ class Attache extends React.Component {
   }
 }
 
-class About extends React.Component {
-  render() {
-    return (
-      <Content padder>
-        <Text style={style.header}>التصل بنا</Text>
-        <Text style={style.paragraph}>{`إخوتي وأخواتي المبتعثين و المبتعثات
-السلام عليكم ورحمة الله وبركـــاته:
-نرحب بكم في تطبيق اصدارات الملحقية الثقافية بسفارة المملكة العربية السعودية في طوكيو على شبكة الإنترنت آملاً أن يسهم هذا التطبيق في تعزيز التواصل بينكم و بين الملحقية الثقافية التي ما وجدت إلا لتكون في خدمتكم وتقديم كل الدعم و العون لكم وأنتم في مهمتكم النبيلة بطلب العلم والمعرفة وتمثيل بلادكم و دينكم في بلاد الشمس المشرقة لتكونوا سفراء اليوم وبناة أمجاد الغد، ويسرها أن تطرح العديد من الوسائل للتواصل 
-
-`}</Text>
-        <Text style={style.header}> فريق التحرير</Text>
-        <Text style={style.paragraph}>
-          {`المشرف العام ورئيس التحرير :  أ. د. خالد بن عبدالرحمن الفرحان
-الدعم الفني : أ.م. محي الشهري ، أ.م. مجاهد مهنا ، م. اوتا تايزن
-`}
-        </Text>
-      </Content>
-    );
-  }
-}
-
 export default class ContactScreen extends React.Component {
   static navigationOptions = {
     title: 'مطبوعات الملحقية',
   };
 
   componentDidMount() {
-    setTimeout(this._tabs.goToPage.bind(this._tabs, 2));
+    setTimeout(this._tabs.goToPage.bind(this._tabs, 1));
   }
 
   render() {
     return (
       <Container>
         <Tabs ref={component => (this._tabs = component)} initialPage={0}>
-          <Tab heading="مطبوعات">
-            <About />
-          </Tab>
-          <Tab heading="الملحقية">
+          <Tab heading="الكلمة">
             <Attache />
           </Tab>
-          <Tab heading="عن الملحقية">
+          <Tab heading="الآهداف">
             <Vision />
           </Tab>
         </Tabs>
