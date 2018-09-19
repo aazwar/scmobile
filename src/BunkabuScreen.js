@@ -7,7 +7,7 @@ import style, { RightList } from './Styles';
 
 export default class ContactScreen extends React.Component {
   static navigationOptions = {
-    title: 'مطبوعات الملحقية',
+    title: '文化部',
   };
 
   render() {

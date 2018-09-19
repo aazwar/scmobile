@@ -47,7 +47,7 @@ const menu = {
     { path: 'Books', color: 'warning', title: '電子書籍' },
     {
       path: 'Browser',
-      param: { url: 'https://king-abdulaziz.saudiculture.jp/' },
+      param: { url: 'http://king-abdulaziz.saudiculture.jp/' },
       color: 'primary',
       title: 'サウディアラビア建国の祖',
     },

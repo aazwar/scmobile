@@ -18,18 +18,19 @@ export default class ViewFeed extends React.PureComponent {
 
   async componentDidMount() {
     let url = this.props.navigation.getParam('url', '');
+    let lang = this.props.navigation.getParam('lang', 'ar');
     let content = await fetchSCSite(url);
     let html = `<html>
   <body>
     ${content}
   </body>
 </html>`;
-    this.setState({ html });
+    this.setState({ html, lang });
     console.log(content);
   }
 
   render() {
-    let { lang } = this.props;
+    let lang = this.state.lang;
     return (
       <ScrollView style={{ flex: 1, margin: 10 }}>
         <HTML
@@ -47,7 +48,7 @@ export default class ViewFeed extends React.PureComponent {
                   p: { marginTop: 14, marginBottom: 14 },
                 }
           }
-          onLinkPress={(evt, href) => { this.props.navigation.push('Browser2', {url: href}); }}
+          onLinkPress={(evt, href) => { this.props.navigation.push('Browser2', {url: href, lang}); }}
         />
       </ScrollView>
     );

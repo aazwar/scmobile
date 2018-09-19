@@ -26,6 +26,7 @@ import ViewFeed from './src/feed/ViewFeed';
 import Toiawase from './src/ToiawaseScreen';
 import Student from './src/StudentScreen';
 import StudyJapan from './src/StudyJapanScreen';
+import Bunkabu from './src/BunkabuScreen';
 import Browser from './src/BrowserScreen';
 import Browser2 from './src/Browser2Screen';
 
@@ -46,6 +47,7 @@ export default createStackNavigator(
     Toiawase,
     Student,
     StudyJapan,
+    Bunkabu,
     Browser2,
     Browser
   },
