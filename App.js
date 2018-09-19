@@ -23,6 +23,11 @@ import NewsJp from './src/feed/NewsJp';
 import Certification from './src/CertificationScreen';
 import Attache from './src/AttacheScreen';
 import ViewFeed from './src/feed/ViewFeed';
+import Toiawase from './src/ToiawaseScreen';
+import Student from './src/StudentScreen';
+import StudyJapan from './src/StudyJapanScreen';
+import Browser from './src/BrowserScreen';
+import Browser2 from './src/Browser2Screen';
 
 export default createStackNavigator(
   {
@@ -38,6 +43,11 @@ export default createStackNavigator(
     ViewFeed,
     Certification,
     Attache,
+    Toiawase,
+    Student,
+    StudyJapan,
+    Browser2,
+    Browser
   },
   {
     navigationOptions: {

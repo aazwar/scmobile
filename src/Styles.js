@@ -100,6 +100,18 @@ export class RightList extends React.PureComponent {
   }
 }
 
+export class LeftList extends React.PureComponent {
+  render() {
+    let bullet = this.props.number ? `(.${this.props.number}` : '•';
+    return (
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={{ marginRight: 5, marginTop: 7, fontSize: 14 }}>{bullet}</Text>
+        <Text style={[styles.paragraph, this.props.style]}>{this.props.children}</Text>
+      </View>
+    );
+  }
+}
+
 export class UrlLink extends React.PureComponent {
   render() {
     let { url, navigation } = this.props;

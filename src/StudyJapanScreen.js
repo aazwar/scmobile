@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, S
 import { Container, Content, ListItem, Tab, Tabs } from 'native-base';
 import HTML from 'react-native-render-html';
 
-import style, { RightList, UrlLink } from './Styles';
+import style, { RightList, LeftList, UrlLink } from './Styles';
 
 export default class CertificationScreen extends React.Component {
   static navigationOptions = {
@@ -39,16 +39,22 @@ class School extends React.Component {
     return (
       <Content padder>
         <Text style={style.title}>قائمة معاهد اللغة اليابانية الموصى بها</Text>
+        
         <Text style={style.jparagraph}>
-          <UrlLink url="https://language.takushoku-u.ac.jp/english/student_program/isp.html" navigation={navigation}>
-            Intensive Japanese Language Program For Overseas Students (IJLP)
-          </UrlLink>, Takushoku University{'\n'}
-          <UrlLink url="">Japanese Language Course for Foreign Students</UrlLink>, Tokai University Japanese Language School
-          affiliated with TOKYO UNIVERSITY of TECHNOLOGY, KATAYANAGI INSTITUTE Tokyo Japanese Language Education Center-JASSO
-          Osaka Japanese Language Education Center-JASSO Kokusho Japanese Language School Saitama International School Sendagaya
-          Japanese School Shinjuku Japanese Language Institute Urawa International Education Center Ehle Institute Japanese
-          Language School The Naganuma School Tokyo School of Japanese Language Osaka – Human Academy Japanese Language School ISI
-          Japanese Language School
+          · Intensive Japanese Language Program For Overseas Students <UrlLink url="https://language.takushoku-u.ac.jp/english/student_program/isp.html" navigation={navigation}>(IJLP), Takushoku University</UrlLink>{'\n'}
+          · Japanese Language Course for Foreign Students, <UrlLink url="http://www.u-tokai.ac.jp/international/undergraduate/japanese_language_course.html" navigation={navigation}>Tokai University</UrlLink>{'\n'} 
+          · Japanese Language School affiliated with TOKYO UNIVERSITY of TECHNOLOGY, <UrlLink url="http://www.jst.ac.jp/us/index.html" navigation={navigation}>KATAYANAGI INSTITUTE</UrlLink>{'\n'}
+          · Japanese Language Education Center - <UrlLink url="http://www.jasso.go.jp/tokyo/index_e.html" navigation={navigation}>JASSO Tokyo</UrlLink>{'\n'}
+          · Japanese Language Education Center - <UrlLink url="http://www.jasso.go.jp/ojlec/index_e.html" navigation={navigation}>JASSO Osaka</UrlLink>{'\n'}
+          · <UrlLink url="http://school.kokusho.co.jp/en/school_info/school_outline.html" navigation={navigation}>Kokusho</UrlLink> Japanese Language School{'\n'}
+          · <UrlLink url="http://en.saisc.jp/" navigation={navigation}>Saitama</UrlLink> International School{'\n'}
+          · <UrlLink url="http://www.jp-sjs.ac.jp/eng/index.html" navigation={navigation}>Sendagaya</UrlLink> Japanese School{'\n'}
+          · <UrlLink url="http://www.sng.ac.jp/english/index.html" navigation={navigation}>Shinjuku</UrlLink> Japanese Language{'\n'}
+          · <UrlLink url="http://www.uiec.jp/" navigation={navigation}>Institute Urawa</UrlLink> International Education Center{'\n'}
+          · <UrlLink url="http://www.ehle.ac.jp/" navigation={navigation}>Ehle Institute</UrlLink> Japanese Language School{'\n'}
+          · <UrlLink url="http://www.naganuma-school.ac.jp/" navigation={navigation}>The Naganuma School Tokyo</UrlLink> School of Japanese Language{'\n'}
+          · <UrlLink url="http://hajl.athuman.com/access/?code=130071#access02" navigation={navigation}>Osaka</UrlLink> – Human Academy Japanese Language School{'\n'}
+          · <UrlLink url="http://www.isi-education.com/" navigation={navigation}>ISI</UrlLink> Japanese Language School{'\n'}
         </Text>
       </Content>
     );

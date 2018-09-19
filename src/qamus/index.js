@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Platform, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { Container, Content, Header, Item, Input, Body, Title, Button, Left, Right, Icon, ListItem } from 'native-base';
-import PopoverTooltip from 'react-native-popover-tooltip';
 
 import style from '../Styles.js';
 import db from '../Database';
