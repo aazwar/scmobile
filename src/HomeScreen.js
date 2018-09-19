@@ -12,15 +12,16 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, Footer } from 'native-base';
+import _ from 'lodash';
 
 import style from './Styles';
 
 class MenuButton extends React.Component {
   render() {
-    let { path, color, title, navigation } = this.props;
+    let { path, color, title, navigation, param } = this.props;
     let props = { [color]: true, style: style.buttonMenu };
     return (
-      <Button block {...props} onPress={() => navigation.navigate(path)}>
+      <Button {...props} onPress={() => navigation.navigate(path, param)}>
         <Text style={style.buttonMenuText}>{title}</Text>
       </Button>
     );
@@ -31,21 +32,31 @@ const menu = {
   ar: [
     { path: 'Tamim', color: 'info', title: 'التعاميم المهمة' },
     { path: 'NewsAr', color: 'primary', title: 'اخبار الملحقية' },
-    { path: 'Qamus', color: 'success', title: 'قواميس مشرق البحث' },
-    { path: 'Nihongo', color: 'success', title: 'القاموس الصوطي الميسر' },
+    { path: 'Qamus', color: 'success', title: 'قواميس مشرق للبحث' },
+    { path: 'Nihongo', color: 'success', title: 'قاموس صوتي ميسر' },
     { path: 'Books', color: 'warning', title: 'مطبوعات الملحقية' },
+    { path: 'StudyJapan', color: 'warning', title: 'الدراسة في اليابان' },
     { path: 'Attache', color: 'light', title: 'عن الملحقية' },
-  ],
-  en: [
-    { path: 'NewsEn', color: 'primary', title: 'Saudi Culture News' },
-    { path: 'Qamus', color: 'success', title: 'Dictionary' },
-    { path: 'Contact', color: 'light', title: 'Contact' },
+    { path: 'Student', color: 'light', title: 'الشوؤن الطلابية' },
   ],
   jp: [
     { path: 'NewsJp', color: 'primary', title: 'ニュース' },
     { path: 'Qamus', color: 'success', title: '科学専門用語辞典' },
     { path: 'Certification', color: 'light', title: '認証取得' },
-    { path: 'Contact', color: 'light', title: '問い合わせ' },
+    { path: 'Bunkabu', color: 'light', title: '文化部' },
+    { path: 'Books', color: 'warning', title: '電子書籍' },
+    {
+      path: 'Browser',
+      param: { url: 'https://king-abdulaziz.saudiculture.jp/' },
+      color: 'primary',
+      title: 'サウディアラビア建国の祖',
+    },
+    {
+      path: 'Browser',
+      param: { url: 'https://king-salman.saudiculture.jp/' },
+      color: 'success',
+      title: '明哲なる王',
+    },
   ],
 };
 
@@ -74,14 +85,25 @@ export default class BookScreen extends React.Component {
     AsyncStorage.setItem('lang', lang);
   }
 
+  _contact() {
+    this.props.navigation.navigate(this.state.lang == 'jp' ? 'Toiawase' : 'Contact');
+  }
+
   render() {
     let { width, height } = Dimensions.get('window');
     let lang = this.state.lang || 'ar';
     let buttons = menu[lang] || menu.ar;
     return (
       <Container style={style.buttonMenuContainer}>
-        {buttons.map((e, i) => <MenuButton key={`${i}`} {...e} navigation={this.props.navigation} />)}
-        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', position: 'absolute', bottom: 0 }}>
+      {
+        _.chunk(buttons, 2).map((e,i) => 
+        <View key={`${i}`} style={{flex: 1, flexDirection: 'row'}}>
+          <MenuButton {...e[0]} navigation={this.props.navigation} />
+        {e[1] && <MenuButton {...e[1]} navigation={this.props.navigation} />}
+        </View>)
+        
+      }
+        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', position: 'absolute', bottom: 0 }}>
           <Button transparent dark style={{ margin: 10 }} onPress={() => this._setLang('ar')}>
             <Text>🇸🇦 العربية</Text>
           </Button>
@@ -89,7 +111,7 @@ export default class BookScreen extends React.Component {
             <Text>🇯🇵 日本語</Text>
           </Button>
         </View>
-        <Button transparent dark style={{ position: 'absolute', right: 5, bottom: 5 }} onPress={() => this.props.navigation.navigate('Contact')}>
+        <Button transparent dark style={{ position: 'absolute', right: 5, bottom: 5 }} onPress={this._contact.bind(this)}>
           <Text style={{ fontSize: 24, fontWeight: 'bold' }}>ⓘ</Text>
         </Button>
       </Container>

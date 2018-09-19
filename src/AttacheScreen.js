@@ -3,15 +3,29 @@ import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, S
 import { Container, Content, ListItem, Tab, Tabs } from 'native-base';
 import HTML from 'react-native-render-html';
 
-import style from './Styles';
+import style, { RightList } from './Styles';
 
-class RightList extends React.PureComponent {
+export default class ContactScreen extends React.Component {
+  static navigationOptions = {
+    title: 'مطبوعات الملحقية',
+  };
+
+  componentDidMount() {
+    setTimeout(this._tabs.goToPage.bind(this._tabs, 1));
+  }
+
   render() {
     return (
-      <View style={{ flexDirection: 'row' }}>
-        <Text style={[style.paragraph, this.props.style]}>{this.props.children}</Text>
-        <Text style={{ marginLeft: 5, marginTop: 7, fontSize: 14 }}>(.{this.props.number}</Text>
-      </View>
+      <Container>
+        <Tabs ref={component => (this._tabs = component)} initialPage={0}>
+          <Tab heading="الكلمة">
+            <Attache />
+          </Tab>
+          <Tab heading="الآهداف">
+            <Vision />
+          </Tab>
+        </Tabs>
+      </Container>
     );
   }
 }
@@ -107,31 +121,6 @@ class Attache extends React.Component {
 
 `}</Text>
       </Content>
-    );
-  }
-}
-
-export default class ContactScreen extends React.Component {
-  static navigationOptions = {
-    title: 'مطبوعات الملحقية',
-  };
-
-  componentDidMount() {
-    setTimeout(this._tabs.goToPage.bind(this._tabs, 1));
-  }
-
-  render() {
-    return (
-      <Container>
-        <Tabs ref={component => (this._tabs = component)} initialPage={0}>
-          <Tab heading="الكلمة">
-            <Attache />
-          </Tab>
-          <Tab heading="الآهداف">
-            <Vision />
-          </Tab>
-        </Tabs>
-      </Container>
     );
   }
 }

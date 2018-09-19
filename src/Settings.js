@@ -7,8 +7,7 @@ export default class Settings extends Storable {
     ph: true,
     mt: true,
     ch: true,
-    ic: true,
-    me: true,
+    mc: true,
     ec: true,
   };
   lang = 'ar'; // ar, en, jp

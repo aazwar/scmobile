@@ -1,4 +1,5 @@
-import { Platform, StyleSheet } from 'react-native';
+import React from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import { human, material, notoCJKWeights } from 'react-native-typography';
 
 let styles =
@@ -36,7 +37,8 @@ let styles =
 styles = {
   ...styles,
   buttonMenu: {
-    margin: 10,
+    margin: 5,
+    padding: 5,
   },
   buttonMenuText: {
     ...styles.arabicBold,
@@ -80,6 +82,33 @@ styles = {
     flex: 1,
     fontSize: 16,
   },
+  link: {
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
 };
+
+export class RightList extends React.PureComponent {
+  render() {
+    let bullet = this.props.number ? `(.${this.props.number}` : '•';
+    return (
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={[styles.paragraph, this.props.style]}>{this.props.children}</Text>
+        <Text style={{ marginLeft: 5, marginTop: 7, fontSize: 14 }}>{bullet}</Text>
+      </View>
+    );
+  }
+}
+
+export class UrlLink extends React.PureComponent {
+  render() {
+    let { url, navigation } = this.props;
+    return (
+      <Text style={styles.link} onPress={() => navigation.navigate('Browser', { url })}>
+        {this.props.children}
+      </Text>
+    );
+  }
+}
 
 export default styles;

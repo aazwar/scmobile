@@ -1,10 +1,20 @@
 const axios = require('axios');
 import { AsyncStorage } from 'react-native';
+import { Toast } from 'native-base';
 import moment from 'moment';
 
 function decodeHtmlEntity(str) {
   return str.replace(/&#(\d+);/g, function(match, dec) {
     return String.fromCharCode(dec);
+  });
+}
+
+function connectionError() {
+  Toast.show({
+    text: 'لا يوجد اتصال بالإنترنت',
+    type: 'warning',
+    textStyle: { textAlign: 'right' },
+    buttonText: 'أوك',
   });
 }
 
@@ -34,6 +44,7 @@ export async function fetchTaamim(force = false) {
     AsyncStorage.setItem('taamimFetchDate', now);
     return taamims;
   } catch (error) {
+    connectionError();
     console.error(error);
     return taamims || [];
   }
@@ -67,6 +78,7 @@ export async function fetchNews(lang, force = false) {
     AsyncStorage.setItem(`newsFetchDate${lang}`, now);
     return news;
   } catch (error) {
+    connectionError();
     console.error(error);
     return taamims || [];
   }
@@ -84,6 +96,20 @@ export async function fetchContent(url) {
     AsyncStorage.setItem(`@${type}-${id}`, JSON.stringify(record));
     return record;
   } catch (error) {
+    connectionError();
+    console.error(error);
+  }
+}
+
+export async function fetchSCSite(url) {
+  try {
+    const { data } = await axios.get(url);
+    console.log(data);
+    let [content] = data.match(/<div class="boxContent">([^]*)<div (style="clear: both"|id="right-content")/gm);
+    console.log(content);
+    return content;
+  } catch (error) {
+    connectionError();
     console.error(error);
   }
 }
