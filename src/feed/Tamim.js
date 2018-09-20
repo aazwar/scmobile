@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, FlatList } from 'react-native';
-import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, ListItem } from 'native-base';
+import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, ListItem, StyleProvider } from 'native-base';
 
+import getTheme from '../../native-base-theme/components';
+import scmobile from '../../native-base-theme/variables/scmobile';
 import { fetchTaamim } from './fetcher.js';
 import styles from '../Styles';
 
@@ -46,13 +48,15 @@ export default class TamimScreen extends React.Component {
 
   render() {
     return (
-      <Container>
-        <FlatList
-          data={this.state.tamims}
-          keyExtractor={(e, i) => `${i}`}
-          renderItem={({ item }) => <Tamim {...item} navigation={this.props.navigation} />}
-        />
-      </Container>
+      <StyleProvider style={getTheme(scmobile)}>
+        <Container>
+          <FlatList
+            data={this.state.tamims}
+            keyExtractor={(e, i) => `${i}`}
+            renderItem={({ item }) => <Tamim {...item} navigation={this.props.navigation} />}
+          />
+        </Container>
+      </StyleProvider>
     );
   }
 }

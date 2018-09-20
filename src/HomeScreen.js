@@ -30,22 +30,25 @@ class MenuButton extends React.Component {
 
 const menu = {
   ar: [
-    { path: 'Tamim', color: 'info', title: 'التعاميم المهمة' },
     { path: 'NewsAr', color: 'primary', title: 'اخبار الملحقية' },
-    { path: 'Qamus', color: 'success', title: 'قواميس مشرق للبحث' },
-    { path: 'Nihongo', color: 'success', title: 'قاموس صوتي ميسر' },
-    { path: 'Books', color: 'warning', title: 'مطبوعات الملحقية' },
-    { path: 'StudyJapan', color: 'warning', title: 'الدراسة في اليابان' },
     { path: 'Attache', color: 'light', title: 'عن الملحقية' },
+
     { path: 'Student', color: 'light', title: 'الشوؤن الطلابية' },
+    { path: 'StudyJapan', color: 'warning', title: 'الدراسة في اليابان' },
+
+    { path: 'Books', color: 'warning', title: 'مطبوعات الملحقية' },
+    { path: 'Tamim', color: 'info', title: 'التعاميم المهمة' },
+
+    { path: 'Nihongo', color: 'success', title: 'قاموس صوتي ميسر' },
+    { path: 'Qamus', color: 'success', title: 'قواميس مشرق للبحث' },
   ],
   jp: [
-    { path: 'NewsJp', color: 'primary', title: 'ニュース' },
-    { path: 'Qamus', color: 'success', title: '科学専門用語辞典' },
-    { path: 'Certification', color: 'light', title: '認証取得' },
     { path: 'Bunkabu', color: 'light', title: '文化部' },
+    { path: 'NewsJp', color: 'primary', title: 'ニュース' },
+    { path: 'Certification', color: 'light', title: '認証取得' },
     { path: 'Books', color: 'warning', title: '電子書籍' },
-    {
+    { path: 'Qamus', color: 'success', title: '科学専門用語辞典' },
+    /*{
       path: 'Browser',
       param: { url: 'http://king-abdulaziz.saudiculture.jp/' },
       color: 'primary',
@@ -56,7 +59,7 @@ const menu = {
       param: { url: 'https://king-salman.saudiculture.jp/' },
       color: 'success',
       title: '明哲なる王',
-    },
+    },*/
   ],
 };
 
@@ -95,15 +98,21 @@ export default class BookScreen extends React.Component {
     let buttons = menu[lang] || menu.ar;
     return (
       <Container style={style.buttonMenuContainer}>
-      {
-        _.chunk(buttons, 2).map((e,i) => 
-        <View key={`${i}`} style={{flex: 1, flexDirection: 'row'}}>
-          <MenuButton {...e[0]} navigation={this.props.navigation} />
-        {e[1] && <MenuButton {...e[1]} navigation={this.props.navigation} />}
-        </View>)
-        
-      }
-        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', position: 'absolute', bottom: 0 }}>
+        {_.chunk(buttons, 2).map((e, i) => (
+          <View key={`${i}`} style={{ flex: 1, flexDirection: 'row' }}>
+            <MenuButton {...e[0]} navigation={this.props.navigation} />
+            {e[1] && <MenuButton {...e[1]} navigation={this.props.navigation} />}
+          </View>
+        ))}
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            alignItems: 'flex-start',
+            position: 'absolute',
+            bottom: 0,
+          }}>
           <Button transparent dark style={{ margin: 10 }} onPress={() => this._setLang('ar')}>
             <Text>🇸🇦 العربية</Text>
           </Button>

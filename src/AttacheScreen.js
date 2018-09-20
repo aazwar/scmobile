@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, ScrollView } from 'react-native';
-import { Container, Content, ListItem, Tab, Tabs } from 'native-base';
+import { Container, Content, ListItem, Tab, Tabs, StyleProvider } from 'native-base';
 import HTML from 'react-native-render-html';
 
+import getTheme from '../native-base-theme/components';
+import scmobile from '../native-base-theme/variables/scmobile';
 import style, { RightList } from './Styles';
 
 export default class ContactScreen extends React.Component {
@@ -16,16 +18,18 @@ export default class ContactScreen extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Tabs ref={component => (this._tabs = component)} initialPage={0}>
-          <Tab heading="الكلمة">
-            <Attache />
-          </Tab>
-          <Tab heading="الآهداف">
-            <Vision />
-          </Tab>
-        </Tabs>
-      </Container>
+      <StyleProvider style={getTheme(scmobile)}>
+        <Container>
+          <Tabs ref={component => (this._tabs = component)} initialPage={0}>
+            <Tab heading="الكلمة">
+              <Attache />
+            </Tab>
+            <Tab heading="الآهداف">
+              <Vision />
+            </Tab>
+          </Tabs>
+        </Container>
+      </StyleProvider>
     );
   }
 }
@@ -81,9 +85,15 @@ class Vision extends React.Component {
 
 class Attache extends React.Component {
   render() {
+    let w = Dimensions.get('window').width / 2;
+    let width = w;
+    let height = (366 / 294) * w;
     return (
       <Content padder>
         <Text style={style.header}>كلمة سعادة الملحق الثقافي السعودي في اليابان بمناسبة تعيينه</Text>
+        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
+          <Image source={require('./assets/attache2.jpg')} style={{ width, height, margin: 10 }} />
+        </View>
         <Text
           style={
             style.paragraph

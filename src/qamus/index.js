@@ -1,7 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Platform, TouchableOpacity, FlatList, Modal } from 'react-native';
-import { Container, Content, Header, Item, Input, Body, Title, Button, Left, Right, Icon, ListItem } from 'native-base';
+import {
+  Container,
+  Content,
+  Header,
+  Item,
+  Input,
+  Body,
+  Title,
+  Button,
+  Left,
+  Right,
+  Icon,
+  ListItem,
+  StyleProvider,
+} from 'native-base';
 
+import getTheme from '../../native-base-theme/components';
+import scmobile from '../../native-base-theme/variables/scmobile';
 import style from '../Styles.js';
 import db from '../Database';
 import Settings from '../Settings';
@@ -80,84 +96,86 @@ export default class QamusScreen extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Modal visible={this.state.showModal} onRequestClose={() => this.setState({ showModal: false })}>
-          {this.state.qamus && (
-            <Container>
-              <Content padder>
-                <ListItem itemDevider>
-                  <Text style={{ ...style.arabicBold, flex: 1 }}>مجال</Text>
-                </ListItem>
-                {fields.map((e, i) => {
-                  return (
-                    <ListItem key={`${i}`}>
-                      <Body>
-                        <Text style={style.arabic}>{e.title}</Text>
-                      </Body>
-                      <Right>
-                        <TouchableOpacity onPress={() => this.toggle(e.key)}>
-                          {Platform.OS === 'ios' ? (
-                            <Icon name={this.state.qamus[e.key] ? 'ios-square' : 'ios-square-outline'} />
-                          ) : (
-                            <Icon name={this.state.qamus[e.key] ? 'md-square' : 'md-square-outline'} />
-                          )}
-                        </TouchableOpacity>
-                      </Right>
-                    </ListItem>
-                  );
-                })}
-                <ListItem>
-                  <Body>
-                    <Button block info onPress={() => this.closeModal()}>
-                      <Text style={style.arabic}>غلق</Text>
-                    </Button>
-                  </Body>
-                </ListItem>
-              </Content>
-            </Container>
-          )}
-        </Modal>
-        <Header searchBar rounded>
-          {Platform.OS === 'ios' && <HeaderBackButton onPress={() => this.props.navigation.goBack()} />}
-          <Item>
-            <Icon name={Platform.OS == 'ios' ? 'ios-menu' : 'md-menu'} onPress={() => this.setState({ showModal: true })} />
-            <Input
-              placeholder="الكلمة"
-              onChangeText={keyword => this.setState({ keyword })}
-              returnKeyType="search"
-              value={this.state.keyword}
-              onSubmitEditing={this._search.bind(this)}
-              onFocus={() => this.setState({ keyword: '' })}
-              clearButtonMode="while-editing"
-            />
-            <Icon name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'} onPress={this._search.bind(this)} />
-          </Item>
-        </Header>
-
-        <Content>
-          <FlatList
-            data={this.state.data}
-            keyExtractor={(item, index) => `${item.id}`}
-            renderItem={({ item }) => (
-              <ListItem>
-                <Text style={{ flex: 1 }}>
-                  {item.english} <Text style={{ fontWeight: 'bold' }}>{item.field}</Text>
-                  {'\n'}
-                  <Text style={style.japanese}>
-                    {item.japanese}
-                    {'\n'}
-                  </Text>
-                  <Text style={style.furigana}>
-                    {item.furigana}
-                    {'\n'}
-                  </Text>
-                  <Text style={style.arabic}>{item.arabic}</Text>
-                </Text>
-              </ListItem>
+      <StyleProvider style={getTheme(scmobile)}>
+        <Container>
+          <Modal visible={this.state.showModal} onRequestClose={() => this.setState({ showModal: false })}>
+            {this.state.qamus && (
+              <Container>
+                <Content padder>
+                  <ListItem itemDevider>
+                    <Text style={{ ...style.arabicBold, flex: 1 }}>مجال</Text>
+                  </ListItem>
+                  {fields.map((e, i) => {
+                    return (
+                      <ListItem key={`${i}`}>
+                        <Body>
+                          <Text style={style.arabic}>{e.title}</Text>
+                        </Body>
+                        <Right>
+                          <TouchableOpacity onPress={() => this.toggle(e.key)}>
+                            {Platform.OS === 'ios' ? (
+                              <Icon name={this.state.qamus[e.key] ? 'ios-square' : 'ios-square-outline'} />
+                            ) : (
+                              <Icon name={this.state.qamus[e.key] ? 'md-square' : 'md-square-outline'} />
+                            )}
+                          </TouchableOpacity>
+                        </Right>
+                      </ListItem>
+                    );
+                  })}
+                  <ListItem>
+                    <Body>
+                      <Button block info onPress={() => this.closeModal()}>
+                        <Text style={style.arabic}>غلق</Text>
+                      </Button>
+                    </Body>
+                  </ListItem>
+                </Content>
+              </Container>
             )}
-          />
-        </Content>
-      </Container>
+          </Modal>
+          <Header searchBar rounded>
+            {Platform.OS === 'ios' && <HeaderBackButton onPress={() => this.props.navigation.goBack()} />}
+            <Item>
+              <Icon name={Platform.OS == 'ios' ? 'ios-menu' : 'md-menu'} onPress={() => this.setState({ showModal: true })} />
+              <Input
+                placeholder="الكلمة"
+                onChangeText={keyword => this.setState({ keyword })}
+                returnKeyType="search"
+                value={this.state.keyword}
+                onSubmitEditing={this._search.bind(this)}
+                onFocus={() => this.setState({ keyword: '' })}
+                clearButtonMode="while-editing"
+              />
+              <Icon name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'} onPress={this._search.bind(this)} />
+            </Item>
+          </Header>
+
+          <Content>
+            <FlatList
+              data={this.state.data}
+              keyExtractor={(item, index) => `${item.id}`}
+              renderItem={({ item }) => (
+                <ListItem>
+                  <Text style={{ flex: 1 }}>
+                    {item.english} <Text style={{ fontWeight: 'bold' }}>{item.field}</Text>
+                    {'\n'}
+                    <Text style={style.japanese}>
+                      {item.japanese}
+                      {'\n'}
+                    </Text>
+                    <Text style={style.furigana}>
+                      {item.furigana}
+                      {'\n'}
+                    </Text>
+                    <Text style={style.arabic}>{item.arabic}</Text>
+                  </Text>
+                </ListItem>
+              )}
+            />
+          </Content>
+        </Container>
+      </StyleProvider>
     );
   }
 }

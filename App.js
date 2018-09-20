@@ -29,6 +29,7 @@ import StudyJapan from './src/StudyJapanScreen';
 import Bunkabu from './src/BunkabuScreen';
 import Browser from './src/BrowserScreen';
 import Browser2 from './src/Browser2Screen';
+import Ratification from './src/RatificationScreen';
 
 export default createStackNavigator(
   {
@@ -49,11 +50,14 @@ export default createStackNavigator(
     StudyJapan,
     Bunkabu,
     Browser2,
-    Browser
+    Browser,
+    Ratification,
   },
   {
     navigationOptions: {
-      headerTitleStyle: { ...Styles.arabicBold, fontWeight: undefined },
+      headerTitleStyle: { ...Styles.arabicBold, fontWeight: undefined, color: 'green' },
+      headerStyle: { backgroundColor: '#F3EFD2' },
+      headerTintColor: 'green',
     },
   }
 );

@@ -1,9 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, FlatList, Alert } from 'react-native';
-import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, ListItem } from 'native-base';
+import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, ListItem, StyleProvider } from 'native-base';
 import _ from 'lodash';
 import Sound from 'react-native-sound';
 
+import getTheme from '../../native-base-theme/components';
+import scmobile from '../../native-base-theme/variables/scmobile';
 import style from '../Styles.js';
 import db from '../Database';
 
@@ -56,31 +58,33 @@ export default class NihongoScreen extends React.Component {
     const server = 'https://saudiculture.jp/nihongo-audio';
     let catid = this.props.navigation.getParam('catid', 0);
     return (
-      <Container>
-        <Content>
-          <FlatList
-            data={this.state.data}
-            keyExtractor={(item, index) => `${index}`}
-            renderItem={({ item }) => (
-              <ListItem
-                style={{ flex: 1 }}
-                onPress={() =>
-                  catid
-                    ? this._play(`${server}/${item.audio_file}`)
-                    : this.props.navigation.push('Nihongo', { catid: item.id, title: item.arabic })
-                }>
-                <Text style={{ flex: 1 }}>
-                  <Text style={{ ...style.bodyText, padding: 5 }}>{item.name}</Text>
-                  <Text style={style.caption}>{`\n${item.reading}`}</Text>
-                </Text>
-                <Text style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
-                  <Text style={{ ...style.arabic, padding: 5 }}>{`${item.arabic}`}</Text>
-                </Text>
-              </ListItem>
-            )}
-          />
-        </Content>
-      </Container>
+      <StyleProvider style={getTheme(scmobile)}>
+        <Container>
+          <Content>
+            <FlatList
+              data={this.state.data}
+              keyExtractor={(item, index) => `${index}`}
+              renderItem={({ item }) => (
+                <ListItem
+                  style={{ flex: 1 }}
+                  onPress={() =>
+                    catid
+                      ? this._play(`${server}/${item.audio_file}`)
+                      : this.props.navigation.push('Nihongo', { catid: item.id, title: item.arabic })
+                  }>
+                  <Text style={{ flex: 1 }}>
+                    <Text style={{ ...style.bodyText, padding: 5 }}>{item.name}</Text>
+                    <Text style={style.caption}>{`\n${item.reading}`}</Text>
+                  </Text>
+                  <Text style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                    <Text style={{ ...style.arabic, padding: 5 }}>{`${item.arabic}`}</Text>
+                  </Text>
+                </ListItem>
+              )}
+            />
+          </Content>
+        </Container>
+      </StyleProvider>
     );
   }
 }

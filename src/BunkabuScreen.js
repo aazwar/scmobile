@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, ScrollView } from 'react-native';
-import { Container, Content, ListItem, Tab, Tabs } from 'native-base';
+import { Container, Content, ListItem, Tab, Tabs, StyleProvider } from 'native-base';
 import HTML from 'react-native-render-html';
 
+import getTheme from '../native-base-theme/components';
+import scmobile from '../native-base-theme/variables/scmobile';
 import style, { RightList } from './Styles';
 
 export default class ContactScreen extends React.Component {
@@ -12,16 +14,18 @@ export default class ContactScreen extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Tabs ref={component => (this._tabs = component)} initialPage={0}>
-          <Tab heading="挨拶">
-            <Attache />
-          </Tab>
-          <Tab heading="ミッション">
-            <Vision />
-          </Tab>
-        </Tabs>
-      </Container>
+      <StyleProvider style={getTheme(scmobile)}>
+        <Container>
+          <Tabs ref={component => (this._tabs = component)} initialPage={0}>
+            <Tab heading="挨拶">
+              <Attache />
+            </Tab>
+            <Tab heading="ミッション">
+              <Vision />
+            </Tab>
+          </Tabs>
+        </Container>
+      </StyleProvider>
     );
   }
 }
@@ -67,10 +71,15 @@ class Vision extends React.Component {
 
 class Attache extends React.Component {
   render() {
+    let w = Dimensions.get('window').width / 2;
+    let width = w;
+    let height = (366 / 294) * w;
     return (
       <Content padder>
         <Text style={style.jheader}>駐日サウジアラビア王国大使館文化アタッシェ 就任挨拶</Text>
-
+        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
+          <Image source={require('./assets/attache1.jpg')} style={{ width, height, margin: 10 }} />
+        </View>
         <Text style={style.jparagraph}>
           サウジアラビア王国国費奨学生及び私費留学生の皆さん、サウジアラビア大使館文化部は、全スタッフが総力を合わせ能う限りを尽くす専門家集団であり、サウジアラビア政府が提供する国費留学生への特別な便宜・措置によって、又、士気高く努力する皆さんが志を遂げ目的を達成する為に用意された柔軟な対応や報奨内容を含む国費奨学金プログラムによって、皆さんを保護し、学業面の指導、生活面の支援をし、又は鼓舞激励して学業の途で皆さんが直面し得るあらゆる困難を取り除くべく全力を挙げてサポートする為にあるということを覚えておいて下さい。{
             '\n'

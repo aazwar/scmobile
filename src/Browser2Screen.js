@@ -8,7 +8,7 @@ import styles from './Styles';
 export default class ViewFeed extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam('url', ''),
+      title: navigation.getParam('title', ''),
     };
   };
 
@@ -35,6 +35,7 @@ export default class ViewFeed extends React.PureComponent {
       <ScrollView style={{ flex: 1, margin: 10 }}>
         <HTML
           html={this.state.html}
+          rtl={this.state.lang == 'ar'}
           imagesMaxWidth={Dimensions.get('window').width}
           baseFontStyle={lang === 'ar' ? styles.arabic : styles.japanese}
           tagsStyles={
@@ -48,7 +49,9 @@ export default class ViewFeed extends React.PureComponent {
                   p: { marginTop: 14, marginBottom: 14 },
                 }
           }
-          onLinkPress={(evt, href) => { this.props.navigation.push('Browser2', {url: href, lang}); }}
+          onLinkPress={(evt, href) => {
+            this.props.navigation.push('Browser2', { url: href, lang });
+          }}
         />
       </ScrollView>
     );

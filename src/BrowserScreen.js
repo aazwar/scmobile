@@ -1,6 +1,9 @@
 import React from 'react';
 import { ScrollView, Dimensions, WebView } from 'react-native';
-import { Container, Content } from 'native-base';
+import { Container, Content, StyleProvider } from 'native-base';
+
+import getTheme from '../native-base-theme/components';
+import scmobile from '../native-base-theme/variables/scmobile';
 
 import styles from './Styles';
 
@@ -22,9 +25,11 @@ export default class ViewFeed extends React.PureComponent {
   render() {
     let url = this.state.url;
     return (
-      <Container>
-        <WebView source={{ uri: url }} style={{ flex: 1 }} />
-      </Container>
+      <StyleProvider style={getTheme(scmobile)}>
+        <Container>
+          <WebView source={{ uri: url }} style={{ flex: 1 }} />
+        </Container>
+      </StyleProvider>
     );
   }
 }

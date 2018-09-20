@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Dimensions, Image, Linking, Platform, ScrollView } from 'react-native';
-import { Container, Content, ListItem, Tab, Tabs } from 'native-base';
+import { Container, Content, ListItem, Tab, Tabs, StyleProvider } from 'native-base';
 import HTML from 'react-native-render-html';
 
+import getTheme from '../native-base-theme/components';
+import scmobile from '../native-base-theme/variables/scmobile';
 import style, { RightList, LeftList, UrlLink } from './Styles';
 
 export default class CertificationScreen extends React.Component {
@@ -16,19 +18,21 @@ export default class CertificationScreen extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Tabs ref={component => (this._tabs = component)} initialPage={0}>
-          <Tab heading="القبول والتسجيل">
-            <Study />
-          </Tab>
-          <Tab heading="معاهد اللغة">
-            <School navigation={this.props.navigation} />
-          </Tab>
-          <Tab heading="مقدمة">
-            <SchoolApplication />
-          </Tab>
-        </Tabs>
-      </Container>
+      <StyleProvider style={getTheme(scmobile)}>
+        <Container>
+          <Tabs ref={component => (this._tabs = component)} initialPage={0}>
+            <Tab heading="القبول والتسجيل">
+              <SchoolApplication />
+            </Tab>
+            <Tab heading="معاهد اللغة">
+              <School navigation={this.props.navigation} />
+            </Tab>
+            <Tab heading="مقدمة">
+              <Study gotoSchoolTab={() => this._tabs.goToPage(1)} />
+            </Tab>
+          </Tabs>
+        </Container>
+      </StyleProvider>
     );
   }
 }
@@ -39,22 +43,80 @@ class School extends React.Component {
     return (
       <Content padder>
         <Text style={style.title}>قائمة معاهد اللغة اليابانية الموصى بها</Text>
-        
+
         <Text style={style.jparagraph}>
-          · Intensive Japanese Language Program For Overseas Students <UrlLink url="https://language.takushoku-u.ac.jp/english/student_program/isp.html" navigation={navigation}>(IJLP), Takushoku University</UrlLink>{'\n'}
-          · Japanese Language Course for Foreign Students, <UrlLink url="http://www.u-tokai.ac.jp/international/undergraduate/japanese_language_course.html" navigation={navigation}>Tokai University</UrlLink>{'\n'} 
-          · Japanese Language School affiliated with TOKYO UNIVERSITY of TECHNOLOGY, <UrlLink url="http://www.jst.ac.jp/us/index.html" navigation={navigation}>KATAYANAGI INSTITUTE</UrlLink>{'\n'}
-          · Japanese Language Education Center - <UrlLink url="http://www.jasso.go.jp/tokyo/index_e.html" navigation={navigation}>JASSO Tokyo</UrlLink>{'\n'}
-          · Japanese Language Education Center - <UrlLink url="http://www.jasso.go.jp/ojlec/index_e.html" navigation={navigation}>JASSO Osaka</UrlLink>{'\n'}
-          · <UrlLink url="http://school.kokusho.co.jp/en/school_info/school_outline.html" navigation={navigation}>Kokusho</UrlLink> Japanese Language School{'\n'}
-          · <UrlLink url="http://en.saisc.jp/" navigation={navigation}>Saitama</UrlLink> International School{'\n'}
-          · <UrlLink url="http://www.jp-sjs.ac.jp/eng/index.html" navigation={navigation}>Sendagaya</UrlLink> Japanese School{'\n'}
-          · <UrlLink url="http://www.sng.ac.jp/english/index.html" navigation={navigation}>Shinjuku</UrlLink> Japanese Language{'\n'}
-          · <UrlLink url="http://www.uiec.jp/" navigation={navigation}>Institute Urawa</UrlLink> International Education Center{'\n'}
-          · <UrlLink url="http://www.ehle.ac.jp/" navigation={navigation}>Ehle Institute</UrlLink> Japanese Language School{'\n'}
-          · <UrlLink url="http://www.naganuma-school.ac.jp/" navigation={navigation}>The Naganuma School Tokyo</UrlLink> School of Japanese Language{'\n'}
-          · <UrlLink url="http://hajl.athuman.com/access/?code=130071#access02" navigation={navigation}>Osaka</UrlLink> – Human Academy Japanese Language School{'\n'}
-          · <UrlLink url="http://www.isi-education.com/" navigation={navigation}>ISI</UrlLink> Japanese Language School{'\n'}
+          · Intensive Japanese Language Program For Overseas Students{' '}
+          <UrlLink url="https://language.takushoku-u.ac.jp/english/student_program/isp.html" navigation={navigation}>
+            (IJLP), Takushoku University
+          </UrlLink>
+          {'\n'}
+          · Japanese Language Course for Foreign Students,{' '}
+          <UrlLink
+            url="http://www.u-tokai.ac.jp/international/undergraduate/japanese_language_course.html"
+            navigation={navigation}>
+            Tokai University
+          </UrlLink>
+          {'\n'}
+          · Japanese Language School affiliated with TOKYO UNIVERSITY of TECHNOLOGY,{' '}
+          <UrlLink url="http://www.jst.ac.jp/us/index.html" navigation={navigation}>
+            KATAYANAGI INSTITUTE
+          </UrlLink>
+          {'\n'}
+          · Japanese Language Education Center -{' '}
+          <UrlLink url="http://www.jasso.go.jp/tokyo/index_e.html" navigation={navigation}>
+            JASSO Tokyo
+          </UrlLink>
+          {'\n'}
+          · Japanese Language Education Center -{' '}
+          <UrlLink url="http://www.jasso.go.jp/ojlec/index_e.html" navigation={navigation}>
+            JASSO Osaka
+          </UrlLink>
+          {'\n'}
+          ·{' '}
+          <UrlLink url="http://school.kokusho.co.jp/en/school_info/school_outline.html" navigation={navigation}>
+            Kokusho
+          </UrlLink>{' '}
+          Japanese Language School{'\n'}
+          ·{' '}
+          <UrlLink url="http://en.saisc.jp/" navigation={navigation}>
+            Saitama
+          </UrlLink>{' '}
+          International School{'\n'}
+          ·{' '}
+          <UrlLink url="http://www.jp-sjs.ac.jp/eng/index.html" navigation={navigation}>
+            Sendagaya
+          </UrlLink>{' '}
+          Japanese School{'\n'}
+          ·{' '}
+          <UrlLink url="http://www.sng.ac.jp/english/index.html" navigation={navigation}>
+            Shinjuku
+          </UrlLink>{' '}
+          Japanese Language{'\n'}
+          ·{' '}
+          <UrlLink url="http://www.uiec.jp/" navigation={navigation}>
+            Institute Urawa
+          </UrlLink>{' '}
+          International Education Center{'\n'}
+          ·{' '}
+          <UrlLink url="http://www.ehle.ac.jp/" navigation={navigation}>
+            Ehle Institute
+          </UrlLink>{' '}
+          Japanese Language School{'\n'}
+          ·{' '}
+          <UrlLink url="http://www.naganuma-school.ac.jp/" navigation={navigation}>
+            The Naganuma School Tokyo
+          </UrlLink>{' '}
+          School of Japanese Language{'\n'}
+          ·{' '}
+          <UrlLink url="http://hajl.athuman.com/access/?code=130071#access02" navigation={navigation}>
+            Osaka
+          </UrlLink>{' '}
+          – Human Academy Japanese Language School{'\n'}
+          ·{' '}
+          <UrlLink url="http://www.isi-education.com/" navigation={navigation}>
+            ISI
+          </UrlLink>{' '}
+          Japanese Language School{'\n'}
         </Text>
       </Content>
     );
@@ -77,7 +139,6 @@ class Study extends React.Component {
           حتى للتخصصات الطبية والعلوم الصحية.
         </Text>
         <Text style={style.paragraph}>تساعد الملحقية في إحضار القبول لدراسة اللغة اليابانية من معاهد اللغة الموصى بها</Text>
-        <Text style={style.paragraph}>(رابط معاهد اللغة الموصى بها)</Text>
         <Text style={style.paragraph}>
           {' '}
           والتي تبدأ الدراسة فيها بشهر أبريل أو أكتوبر، كذلك يمكن الملحقية المساعدة في تسهيل الحصول على التأشيرة الدراسية
@@ -104,11 +165,24 @@ class Study extends React.Component {
           هذا العدد من البرامج في مرحلة الدراسات العليا إلا أنه يخضع للموافقة المسبقة من الأستاذ المشرف على كتابة التقارير
           الدراسية وبحث تخرج الماجستير والدكتوراه باللغة الإنجليزية. وعادة تشترط هذه الجامعات مستويات مرتفعة في اللغة الإنجليزية.
         </Text>
-        <Text style={style.header}>وللمعلومات التفصيلية عن التسجيل في معاهد اللغة والجامعات نأمل الاطلاع على الرابط التالي:</Text>
-        <Text style={style.paragraph}>رابط معلومات التسجيل في معاهد اللغة والجامعات</Text>
-        <Text style={style.paragraph}>الإيميل: students@saudiculture.jp</Text>
-        <Text style={style.paragraph}>الهاتف: 81353483011+</Text>
-        <Text style={style.paragraph}>الفاكس: 81353483012+</Text>
+        <Text style={style.paragraph}>
+          الإيميل:{' '}
+          <Text style={style.link} onPress={() => Linking.openURL('mailto:students@saudiculture.jp')}>
+            students@saudiculture.jp
+          </Text>
+        </Text>
+        <Text style={style.paragraph}>
+          الهاتف:{' '}
+          <Text style={style.link} onPress={() => Linking.openURL('tel:+81353483011')}>
+            +81353483011
+          </Text>
+        </Text>
+        <Text style={style.paragraph}>
+          الفاكس:{' '}
+          <Text style={style.link} onPress={() => Linking.openURL('tel:+81353483012')}>
+            +81353483012
+          </Text>
+        </Text>
         <Text style={style.paragraph}>مواعيد عمل ملحقية اليابان: من 09:30 صباحا إلى 16:30 مساء بتوقيت طوكيو</Text>
         <Text style={style.paragraph}>(توقيت اليابان يسبق توقيت المملكة بـ 6 ساعات)</Text>
       </Content>
