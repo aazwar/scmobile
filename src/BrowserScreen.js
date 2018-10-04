@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Dimensions, WebView } from 'react-native';
+import { ScrollView, Dimensions, WebView, View, Text } from 'react-native';
 import { Container, Content, StyleProvider } from 'native-base';
 
 import getTheme from '../native-base-theme/components';
@@ -10,11 +10,12 @@ import styles from './Styles';
 export default class ViewFeed extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam('url', ''),
+      title: navigation.getParam('title', '') || navigation.getParam('url'),
     };
   };
   state = {
     url: '',
+    error: false,
   };
 
   async componentDidMount() {
@@ -24,10 +25,14 @@ export default class ViewFeed extends React.PureComponent {
 
   render() {
     let url = this.state.url;
-    return (
+    return this.state.error ? (
+      <View style={{ flex: 1 }}>
+        <Text>Network Error</Text>
+      </View>
+    ) : (
       <StyleProvider style={getTheme(scmobile)}>
         <Container>
-          <WebView source={{ uri: url }} style={{ flex: 1 }} />
+          <WebView source={{ uri: url }} style={{ flex: 1 }} onError={() => this.setState({ error: true })} />
         </Container>
       </StyleProvider>
     );

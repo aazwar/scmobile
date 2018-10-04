@@ -16,11 +16,12 @@ import {
   StyleProvider,
 } from 'native-base';
 
-import getTheme from '../../native-base-theme/components';
-import scmobile from '../../native-base-theme/variables/scmobile';
-import style from '../Styles.js';
-import db from '../Database';
-import Settings from '../Settings';
+import getTheme from '../native-base-theme/components';
+import scmobile from '../native-base-theme/variables/scmobile';
+import material from '../native-base-theme/variables/material';
+import style from './Styles.js';
+import db from './Database';
+import Settings from './Settings';
 import { HeaderBackButton } from 'react-navigation';
 
 const fields = [
@@ -95,8 +96,9 @@ export default class QamusScreen extends React.Component {
   }
 
   render() {
+    let lang = this.props.navigation.getParam('lang', 'ar');
     return (
-      <StyleProvider style={getTheme(scmobile)}>
+      <StyleProvider style={getTheme(Platform.OS == 'ios' ? scmobile : material)}>
         <Container>
           <Modal visible={this.state.showModal} onRequestClose={() => this.setState({ showModal: false })}>
             {this.state.qamus && (
@@ -125,8 +127,8 @@ export default class QamusScreen extends React.Component {
                   })}
                   <ListItem>
                     <Body>
-                      <Button block info onPress={() => this.closeModal()}>
-                        <Text style={style.arabic}>غلق</Text>
+                      <Button block style={{ backgroundColor: 'green' }} onPress={() => this.closeModal()}>
+                        <Text style={{...style.arabicBold, textAlign: 'center', color: 'white', flex: 1 }}>غلق</Text>
                       </Button>
                     </Body>
                   </ListItem>
@@ -134,12 +136,12 @@ export default class QamusScreen extends React.Component {
               </Container>
             )}
           </Modal>
-          <Header searchBar rounded>
+          <Header searchBar style={{ backgroundColor: '#F3EFD2' }}>
             {Platform.OS === 'ios' && <HeaderBackButton onPress={() => this.props.navigation.goBack()} />}
             <Item>
               <Icon name={Platform.OS == 'ios' ? 'ios-menu' : 'md-menu'} onPress={() => this.setState({ showModal: true })} />
               <Input
-                placeholder="الكلمة"
+                placeholder={lang == 'ar' ? "الكلمة" : "言葉" }
                 onChangeText={keyword => this.setState({ keyword })}
                 returnKeyType="search"
                 value={this.state.keyword}

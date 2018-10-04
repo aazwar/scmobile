@@ -17,7 +17,7 @@ export default class ContactScreen extends React.Component {
       <StyleProvider style={getTheme(scmobile)}>
         <Container>
           <Content padder>
-            <Text style={style.header}>التصل بنا</Text>
+            <Text style={style.header}>اتصل بِنَا</Text>
             <Text style={style.paragraph}>{`السلام عليكم ورحمة الله وبركـــاته:
 نرحب بكم في تطبيق الملحقية الثقافية بسفارة المملكة العربية السعودية في طوكيو على شبكة الإنترنت آملاً أن يسهم هذا التطبيق في تعزيز التواصل بينكم و بين الملحقية الثقافية التي ما وجدت إلا لتكون في خدمتكم وتقديم كل الدعم و العون لكم وأنتم في مهمتكم النبيلة بطلب العلم والمعرفة وتمثيل بلادكم و دينكم في بلاد الشمس المشرقة لتكونوا سفراء اليوم وبناة أمجاد الغد، ويسرها أن تطرح العديد من الوسائل للتواصل وترحب الملحقية بكافة أنواع التواصل الأخرى مثل البريد الإلكتروني والهاتف .
 
@@ -49,6 +49,7 @@ export default class ContactScreen extends React.Component {
 أ. غالي المحمد`}</Text>
             <Text style={style.paragraph}>{`الدعم الفني:
 أ.م. محي الشهري ، أ.م. مجاهد مهنا ، م. اوتا تايزن`}</Text>
+            <Text style={style.paragraph}>{`التصميم: أ.م. مجاهد مهنا`}</Text>
           </Content>
         </Container>
       </StyleProvider>

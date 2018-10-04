@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView, Dimensions } from 'react-native';
-import HTML from 'react-native-render-html';
+import { ScrollView, Dimensions, Text } from 'react-native';
 
 import { fetchContent } from './fetcher';
 import styles from '../Styles';
+import { SimpleHtml, AutoImage } from '../Components';
 
 export default class ViewFeed extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
@@ -11,41 +11,40 @@ export default class ViewFeed extends React.PureComponent {
       title: navigation.getParam('title', ''),
     };
   };
-
-  state = {
-    html: '<html><body></body></html>',
-  };
+  state = {};
 
   async componentDidMount() {
     let url = this.props.navigation.getParam('url', '');
+    let lang = this.props.navigation.getParam('lang', 'ar');
     let record = await fetchContent(url);
-    let html = `<html>
-  <body><p>${record.date}<br></p>${record.content}
-  </body>
-</html>`;
-    this.setState({ html });
+    console.log(record);
+    this.setState({ ...record, lang });
   }
 
   render() {
-    let { lang } = this.props;
+    if (!this.state.date) return null;
+    let { date, lang, elements } = this.state;
     return (
       <ScrollView style={{ flex: 1, margin: 10 }}>
-        <HTML
-          html={this.state.html}
-          imagesMaxWidth={Dimensions.get('window').width}
-          baseFontStyle={lang === 'ar' ? styles.arabic : styles.japanese}
-          tagsStyles={
-            lang === 'ar'
-              ? {
-                  h2: { textAlign: 'right' },
-                  p: { marginTop: 14, marginBottom: 14 },
-                }
-              : {
-                  h2: { textAlign: 'left' },
-                  p: { marginTop: 14, marginBottom: 14 },
-                }
+        <Text style={lang == 'ar' ? styles.paragraph : styles.jparagraph}>{date}</Text>
+        {elements.map((e, i) => {
+          switch (e.type) {
+            case 'h2':
+              return (
+                <Text key={`${i}`} style={lang == 'ar' ? styles.header : styles.jheader}>
+                  {e.text}
+                </Text>
+              );
+            case 'img':
+              return <AutoImage key={`${i}`} source={{ uri: e.text }} />;
+            case 'p':
+              return (
+                <SimpleHtml key={`${i}`} lang={lang}>
+                  {e.text}
+                </SimpleHtml>
+              );
           }
-        />
+        })}
       </ScrollView>
     );
   }

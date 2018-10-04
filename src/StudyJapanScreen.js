@@ -5,7 +5,8 @@ import HTML from 'react-native-render-html';
 
 import getTheme from '../native-base-theme/components';
 import scmobile from '../native-base-theme/variables/scmobile';
-import style, { RightList, LeftList, UrlLink } from './Styles';
+import style from './Styles';
+import { RightList, LeftList, UrlLink } from './Components';
 
 export default class CertificationScreen extends React.Component {
   static navigationOptions = {

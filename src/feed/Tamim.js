@@ -25,7 +25,7 @@ export default class TamimScreen extends React.Component {
       headerTitleStyle: navigationOptions.headerTitleStyle,
       headerRight: (
         <Button transparent onPress={navigation.getParam('refresh')}>
-          <Icon name={Platform.OS == 'ios' ? 'ios-refresh' : 'md-refresh'} />
+          <Icon size={25} color="green" name={Platform.OS == 'ios' ? 'ios-refresh' : 'md-refresh'} />
         </Button>
       ),
     };

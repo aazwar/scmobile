@@ -5,11 +5,12 @@ import HTML from 'react-native-render-html';
 
 import getTheme from '../native-base-theme/components';
 import scmobile from '../native-base-theme/variables/scmobile';
-import style, { RightList } from './Styles';
+import style from './Styles';
+import { RightList } from './Components';
 
 export default class ContactScreen extends React.Component {
   static navigationOptions = {
-    title: 'مطبوعات الملحقية',
+    title: 'عن الملحقية',
   };
 
   componentDidMount() {

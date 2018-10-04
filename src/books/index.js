@@ -7,8 +7,10 @@ import scmobile from '../../native-base-theme/variables/scmobile';
 import books from './books';
 
 export default class BookScreen extends React.Component {
-  static navigationOptions = {
-    title: 'مطبوعات الملحقية',
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('title', ''),
+    };
   };
   render() {
     return (

@@ -4,10 +4,10 @@ import { Container, Content, Header, Body, Title, Button, Left, Right, Icon, Lis
 import _ from 'lodash';
 import Sound from 'react-native-sound';
 
-import getTheme from '../../native-base-theme/components';
-import scmobile from '../../native-base-theme/variables/scmobile';
-import style from '../Styles.js';
-import db from '../Database';
+import getTheme from '../native-base-theme/components';
+import scmobile from '../native-base-theme/variables/scmobile';
+import style from './Styles.js';
+import db from './Database';
 
 export default class NihongoScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {

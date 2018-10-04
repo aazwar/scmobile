@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { human, material, notoCJKWeights } from 'react-native-typography';
 
 let styles =
@@ -12,11 +12,13 @@ let styles =
         arabic: {
           fontFamily: 'Droid Arabic Kufi',
           textAlign: 'right',
+          flex: 1,
         },
         arabicBold: {
           fontFamily: 'Droid Arabic Kufi',
           fontWeight: 'bold',
           textAlign: 'right',
+          flex: 1,
         },
       }
     : {
@@ -27,10 +29,12 @@ let styles =
         arabic: {
           fontFamily: 'DroidKufi-Regular',
           textAlign: 'right',
+          flex: 1,
         },
         arabicBold: {
           fontFamily: 'DroidKufi-Bold',
           textAlign: 'right',
+          flex: 1,
         },
       };
 
@@ -59,6 +63,13 @@ styles = {
     textAlign: 'center',
     fontSize: 20,
   },
+  jtitle: {
+    ...styles.japanese,
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
   header: {
     ...styles.arabicBold,
     flex: 1,
@@ -70,7 +81,7 @@ styles = {
     flex: 1,
     fontWeight: 'bold',
     marginBottom: 10,
-    fontSize: 18,
+    fontSize: 16,
   },
   paragraph: {
     ...styles.arabic,
@@ -80,47 +91,12 @@ styles = {
   jparagraph: {
     ...styles.japanese,
     flex: 1,
-    fontSize: 16,
+    fontSize: 14,
   },
   link: {
     color: 'blue',
     textDecorationLine: 'underline',
   },
 };
-
-export class RightList extends React.PureComponent {
-  render() {
-    let bullet = this.props.number ? `(.${this.props.number}` : '•';
-    return (
-      <View style={{ flexDirection: 'row' }}>
-        <Text style={[styles.paragraph, this.props.style]}>{this.props.children}</Text>
-        <Text style={{ marginLeft: 5, marginTop: 7, fontSize: 14 }}>{bullet}</Text>
-      </View>
-    );
-  }
-}
-
-export class LeftList extends React.PureComponent {
-  render() {
-    let bullet = this.props.number ? `(.${this.props.number}` : '•';
-    return (
-      <View style={{ flexDirection: 'row' }}>
-        <Text style={{ marginRight: 5, marginTop: 7, fontSize: 14 }}>{bullet}</Text>
-        <Text style={[styles.paragraph, this.props.style]}>{this.props.children}</Text>
-      </View>
-    );
-  }
-}
-
-export class UrlLink extends React.PureComponent {
-  render() {
-    let { url, navigation } = this.props;
-    return (
-      <Text style={styles.link} onPress={() => navigation.navigate('Browser', { url })}>
-        {this.props.children}
-      </Text>
-    );
-  }
-}
 
 export default styles;
