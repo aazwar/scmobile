@@ -45,7 +45,7 @@ export default class ContactScreen extends React.Component {
             <Text style={style.header}>فريق التحرير</Text>
             <Text style={style.paragraph}>{`المشرف العام ورئيس التحرير:
 أ. د. خالد بن عبدالرحمن الفرحان`}</Text>
-            <Text style={style.paragraph}>{`مراجعة:
+            <Text style={style.paragraph}>{`مدير الجودة والتطوير:
 أ. غالي المحمد`}</Text>
             <Text style={style.paragraph}>{`الدعم الفني:
 أ.م. محي الشهري ، أ.م. مجاهد مهنا ، م. اوتا تايزن`}</Text>

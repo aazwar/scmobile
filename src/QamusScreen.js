@@ -128,7 +128,7 @@ export default class QamusScreen extends React.Component {
                   <ListItem>
                     <Body>
                       <Button block style={{ backgroundColor: 'green' }} onPress={() => this.closeModal()}>
-                        <Text style={{...style.arabicBold, textAlign: 'center', color: 'white', flex: 1 }}>غلق</Text>
+                        <Text style={{ ...style.arabicBold, textAlign: 'center', color: 'white', flex: 1 }}>غلق</Text>
                       </Button>
                     </Body>
                   </ListItem>
@@ -141,7 +141,7 @@ export default class QamusScreen extends React.Component {
             <Item>
               <Icon name={Platform.OS == 'ios' ? 'ios-menu' : 'md-menu'} onPress={() => this.setState({ showModal: true })} />
               <Input
-                placeholder={lang == 'ar' ? "الكلمة" : "言葉" }
+                placeholder={lang == 'ar' ? 'الكلمة' : '言葉'}
                 onChangeText={keyword => this.setState({ keyword })}
                 returnKeyType="search"
                 value={this.state.keyword}

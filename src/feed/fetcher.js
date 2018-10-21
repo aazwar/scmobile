@@ -88,13 +88,13 @@ export async function fetchContent(url) {
   let [, type, id] = url.match(/(\w+)\/(\d+)/);
   //let record = await AsyncStorage.getItem(`@${type}-${id}`).then(str => JSON.parse(str));
   let record = null;
-  
+
   let decode = function(str) {
     return str.replace(/&#(\d+);/g, function(match, dec) {
       return String.fromCharCode(dec);
     });
   };
-  
+
   if (record != null) return record;
   try {
     const { data } = await axios.get(url);
@@ -111,7 +111,7 @@ export async function fetchContent(url) {
     ];
     regexes.forEach(e => {
       while ((match = e.regex.exec(data)) != null) {
-        if(e.type == 'p') {
+        if (e.type == 'p') {
           let text = match[1].replace(/<[^>]*>/g, '');
           elements.push({ index: match.index, type: e.type, text });
         } else {

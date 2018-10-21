@@ -1,6 +1,6 @@
 {
   "name": "scmobile",
-  "version": "0.0.1",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -28,6 +28,7 @@
     "native-base": "^2.7.0",
     "react": "16.4.1",
     "react-native": "0.56.0",
+    "react-native-collapsible": "^1.1.0",
     "react-native-render-html": "git+https://git@github.com/aazwar/react-native-render-html.git",
     "react-native-sound": "^0.10.9",
     "react-native-sqlite-storage": "git+https://git@github.com/aazwar/react-native-sqlite-storage.git",

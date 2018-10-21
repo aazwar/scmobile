@@ -32,6 +32,7 @@ import Browser from './src/BrowserScreen';
 import Browser2 from './src/Browser2Screen';
 import TextView from './src/TextViewScreen';
 import Ratification from './src/RatificationScreen';
+import School from './src/SchoolScreen';
 
 console.reportErrorsAsExceptions = false;
 
@@ -57,6 +58,7 @@ const AppNavigator = createStackNavigator(
     Browser,
     TextView,
     Ratification,
+    School,
   },
   {
     navigationOptions: {
