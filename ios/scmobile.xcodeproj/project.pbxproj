@@ -1575,6 +1575,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.saudiculture.scmobile;
 				PRODUCT_NAME = scmobile;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1603,6 +1604,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.saudiculture.scmobile;
 				PRODUCT_NAME = scmobile;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

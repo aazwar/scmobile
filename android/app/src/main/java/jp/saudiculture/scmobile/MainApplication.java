@@ -1,4 +1,4 @@
-package com.scmobile;
+package jp.saudiculture.scmobile;
 
 import android.app.Application;
 

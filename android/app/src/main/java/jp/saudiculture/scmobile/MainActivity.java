@@ -1,4 +1,4 @@
-package com.scmobile;
+package jp.saudiculture.scmobile;
 
 import com.facebook.react.ReactActivity;
 
